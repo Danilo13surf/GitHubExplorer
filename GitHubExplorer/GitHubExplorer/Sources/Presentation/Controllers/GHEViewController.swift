@@ -8,7 +8,12 @@
 
 import UIKit
 
-class GHEViewController: UIViewController {
+class GHEViewController: BaseViewController {
+    
+    // MARK: - Constants
+    private enum Constants {
+        static let listTitle = "Lista de Usuarios"
+    }
     
     // MARK: - Properties
     private var viewModel: GHEViewModelProtocol?
@@ -17,6 +22,28 @@ class GHEViewController: UIViewController {
     private lazy var loadingView: LoadingView = {
         let view = LoadingView()
         return view
+    }()
+    
+    private lazy var headerView: HeaderView = {
+        let header = HeaderView()
+        header.title = Constants.listTitle
+        return header
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.registerCell(GHEProfileCell.self)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.bounces = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.backgroundColor = .white
+        tableView.separatorStyle = .singleLine
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.separatorInset = .zero
+        tableView.layoutMargins = .zero
+        return tableView
     }()
     
     // MARK: - Instantiate
@@ -47,6 +74,9 @@ class GHEViewController: UIViewController {
             case .loaded:
                 DispatchQueue.main.async {
                     self.removeLoadingView()
+                    self.headerView.fadeInOut(isHidden: false)
+                    self.tableView.fadeInOut(isHidden: false)
+                    self.tableView.reloadData()
                 }
             case .error:
                 DispatchQueue.main.async {
@@ -55,16 +85,60 @@ class GHEViewController: UIViewController {
         }
     }
     
-    private func setupUI() {
-        view.backgroundColor = .white
+    override func setupUI() {
+        setupHeaderView()
+        setupTableView()
+    }
+    
+    private func setupHeaderView() {
+        contentView.addSubview(headerView)
+        headerView.isHidden = true
+        headerView.myAnchor(top: (view.topAnchor, 24),
+                            leading: (view.leadingAnchor, 24),
+                            trailing: (view.trailingAnchor, 24)
+        )
+    }
+    
+    private func setupTableView() {
+        contentView.addSubview(tableView)
+        tableView.isHidden = true
+        tableView.myAnchor(top: (headerView.bottomAnchor, 38),
+                           leading: (contentView.leadingAnchor, 24),
+                           trailing: (contentView.trailingAnchor, 24),
+                           bottom: (contentView.bottomAnchor, 24)
+        )
     }
     
     private func showLoadingView() {
-        view.addSubview(loadingView)
+        contentView.addSubview(loadingView)
         loadingView.myFillSuperview()
     }
     
     private func removeLoadingView() {
         loadingView.removeFromSuperview()
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension GHEViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.model?.count ?? 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = viewModel?.model?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(GHEProfileCell.self, for: indexPath)
+        cell.setup(title: model?.login, avatarUrl: model?.avatarURL)
+        return cell
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension GHEViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async { [self] in
+
+        }
     }
 }
