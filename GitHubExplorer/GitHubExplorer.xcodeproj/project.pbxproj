@@ -13,6 +13,7 @@
 		2D3C63DC2A450E9D008CEB30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */; };
 		2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */; };
 		2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */; };
+		2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A42A45B6880077A45E /* GHEConstants.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEResponse.swift; sourceTree = "<group>"; };
 		2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListRepositoryResponse.swift; sourceTree = "<group>"; };
+		2DAAD2A42A45B6880077A45E /* GHEConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEConstants.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2D3C63F92A454881008CEB30 /* Data */,
+				2DAAD2A22A45B63D0077A45E /* Infrastructure */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -112,6 +115,22 @@
 				2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		2DAAD2A22A45B63D0077A45E /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2A32A45B65C0077A45E /* Constants */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		2DAAD2A32A45B65C0077A45E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2A42A45B6880077A45E /* GHEConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		3C0C73473CB9B4B9735F8EB7 /* Frameworks */ = {
@@ -267,6 +286,7 @@
 				2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */,
 				2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */,
 				2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */,
+				2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */,
 				2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
