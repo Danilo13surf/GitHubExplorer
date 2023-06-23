@@ -15,6 +15,7 @@
 		2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */; };
 		2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A42A45B6880077A45E /* GHEConstants.swift */; };
 		2DAAD2A92A45B8FC0077A45E /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A82A45B8FC0077A45E /* Dynamic.swift */; };
+		2DAAD2AB2A45B98A0077A45E /* UIViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListRepositoryResponse.swift; sourceTree = "<group>"; };
 		2DAAD2A42A45B6880077A45E /* GHEConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEConstants.swift; sourceTree = "<group>"; };
 		2DAAD2A82A45B8FC0077A45E /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewConstraints.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				2DAAD2A82A45B8FC0077A45E /* Dynamic.swift */,
+				2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				2D3C63D72A450E9B008CEB30 /* GHEViewController.swift in Sources */,
 				2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */,
 				2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */,
+				2DAAD2AB2A45B98A0077A45E /* UIViewConstraints.swift in Sources */,
 				2DAAD2A92A45B8FC0077A45E /* Dynamic.swift in Sources */,
 				2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */,
 				2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */,
