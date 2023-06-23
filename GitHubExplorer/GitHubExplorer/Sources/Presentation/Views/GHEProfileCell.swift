@@ -8,6 +8,11 @@
 
 import UIKit
 
+public enum GHEProfileCellStyle {
+    case resume
+    case completeInfo
+}
+
 class GHEProfileCell: UITableViewCell {
     
     // MARK: - Constants
@@ -17,6 +22,7 @@ class GHEProfileCell: UITableViewCell {
         static let moreInfoText = "Mais informações"
         static let textDownloadError = "Erro ao fazer o download da imagem:"
         static let textNotFoundData = "Dados da imagem não encontrados."
+        static let showRepositories = "Mostrar Repositorios"
         static let texImageCorrupted = "Não foi possível criar a imagem a partir dos dados recebidos."
     }
     
@@ -39,10 +45,9 @@ class GHEProfileCell: UITableViewCell {
         return label
     }()
     
-    private lazy var moreInfoLabel: UILabel = {
+    private lazy var infoLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.text = Constants.moreInfoText
         label.textColor = .blue
         return label
     }()
@@ -50,9 +55,11 @@ class GHEProfileCell: UITableViewCell {
     var imageUrl: String?
     
     // MARK: - Setup
-    open func setup(title: String?, avatarUrl: String?) {
+    open func setup(title: String?, avatarUrl: String?, style: GHEProfileCellStyle = .resume
+    ) {
         titleLabel.text = title
         imageUrl = avatarUrl
+        infoLabel.text = getInfoText(style: style)
         setupUI()
     }
     
@@ -63,6 +70,10 @@ class GHEProfileCell: UITableViewCell {
         setupAvatarView()
         setupTitleLabel()
         setupMoreInfoLabel()
+    }
+    
+    private func getInfoText(style: GHEProfileCellStyle) -> String {
+        return style == .resume ? Constants.moreInfoText : Constants.showRepositories
     }
     
     private func setupContentAvatarView() {
@@ -112,8 +123,8 @@ class GHEProfileCell: UITableViewCell {
     }
     
     private func setupMoreInfoLabel() {
-        contentView.addSubview(moreInfoLabel)
-        moreInfoLabel.myAnchor(
+        contentView.addSubview(infoLabel)
+        infoLabel.myAnchor(
             top: (titleLabel.bottomAnchor, 4),
             trailing: (contentView.trailingAnchor, 24),
             bottom: (contentView.bottomAnchor, 24)
