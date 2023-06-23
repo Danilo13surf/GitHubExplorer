@@ -59,13 +59,21 @@
 		2D3C63D12A450E9B008CEB30 /* GitHubExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				2D3C63D22A450E9B008CEB30 /* AppDelegate.swift */,
-				2D3C63D42A450E9B008CEB30 /* SceneDelegate.swift */,
+				2D3C63F72A45395B008CEB30 /* SupportFiles */,
 				2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */,
-				2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */,
 				2D3C63E02A450E9D008CEB30 /* Info.plist */,
+				2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */,
 			);
 			path = GitHubExplorer;
+			sourceTree = "<group>";
+		};
+		2D3C63F72A45395B008CEB30 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2D3C63D42A450E9B008CEB30 /* SceneDelegate.swift */,
+				2D3C63D22A450E9B008CEB30 /* AppDelegate.swift */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		3C0C73473CB9B4B9735F8EB7 /* Frameworks */ = {
@@ -97,6 +105,7 @@
 				2D3C63CC2A450E9B008CEB30 /* Frameworks */,
 				2D3C63CD2A450E9B008CEB30 /* Resources */,
 				61E421140C6077714398894E /* [CP] Embed Pods Frameworks */,
+				2D3C63F42A4534CC008CEB30 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -154,6 +163,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2D3C63F42A4534CC008CEB30 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		61E421140C6077714398894E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
