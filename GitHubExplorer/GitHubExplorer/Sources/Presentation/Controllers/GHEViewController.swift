@@ -86,23 +86,14 @@ class GHEViewController: BaseViewController {
     }
     
     override func setupUI() {
-        setupHeaderView()
+        titleText = Constants.listTitle
         setupTableView()
-    }
-    
-    private func setupHeaderView() {
-        contentView.addSubview(headerView)
-        headerView.isHidden = true
-        headerView.myAnchor(top: (view.topAnchor, 24),
-                            leading: (view.leadingAnchor, 24),
-                            trailing: (view.trailingAnchor, 24)
-        )
     }
     
     private func setupTableView() {
         contentView.addSubview(tableView)
         tableView.isHidden = true
-        tableView.myAnchor(top: (headerView.bottomAnchor, 38),
+        tableView.myAnchor(top: (contentView.topAnchor, 38),
                            leading: (contentView.leadingAnchor, 24),
                            trailing: (contentView.trailingAnchor, 24),
                            bottom: (contentView.bottomAnchor, 24)
@@ -128,7 +119,7 @@ extension GHEViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = viewModel?.model?[indexPath.row]
         let cell = tableView.dequeueReusableCell(GHEProfileCell.self, for: indexPath)
-        cell.setup(title: model?.login, avatarUrl: model?.avatarURL)
+        cell.setup(title: model?.login, avatarUrl: model?.avatar_url)
         return cell
     }
 }
