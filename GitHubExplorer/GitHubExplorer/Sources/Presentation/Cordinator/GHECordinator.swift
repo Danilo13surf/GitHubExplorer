@@ -9,6 +9,8 @@
 import UIKit
 
 public class GHEListUserCordinator {
+    
+    // MARK: - Properties
     private var navigationController: UINavigationController?
 
     // MARK: - Initialize

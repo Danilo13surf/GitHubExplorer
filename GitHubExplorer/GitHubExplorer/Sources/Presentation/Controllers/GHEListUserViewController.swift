@@ -125,7 +125,6 @@ extension GHEListUserViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDataSource
-
 extension GHEListUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async { [self] in
