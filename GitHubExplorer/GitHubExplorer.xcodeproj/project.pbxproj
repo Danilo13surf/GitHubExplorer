@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63D22A450E9B008CEB30 /* AppDelegate.swift */; };
 		2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63D42A450E9B008CEB30 /* SceneDelegate.swift */; };
-		2D3C63D72A450E9B008CEB30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63D62A450E9B008CEB30 /* ViewController.swift */; };
-		2D3C63DA2A450E9B008CEB30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3C63D82A450E9B008CEB30 /* Main.storyboard */; };
+		2D3C63D72A450E9B008CEB30 /* GHEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */; };
 		2D3C63DC2A450E9D008CEB30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */; };
-		2D3C63DF2A450E9D008CEB30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3C63DD2A450E9D008CEB30 /* LaunchScreen.storyboard */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,10 +19,8 @@
 		2D3C63CF2A450E9B008CEB30 /* GitHubExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3C63D22A450E9B008CEB30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3C63D42A450E9B008CEB30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D3C63D62A450E9B008CEB30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2D3C63D92A450E9B008CEB30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEViewController.swift; sourceTree = "<group>"; };
 		2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2D3C63DE2A450E9D008CEB30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D3C63E02A450E9D008CEB30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,10 +61,8 @@
 			children = (
 				2D3C63D22A450E9B008CEB30 /* AppDelegate.swift */,
 				2D3C63D42A450E9B008CEB30 /* SceneDelegate.swift */,
-				2D3C63D62A450E9B008CEB30 /* ViewController.swift */,
-				2D3C63D82A450E9B008CEB30 /* Main.storyboard */,
+				2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */,
 				2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */,
-				2D3C63DD2A450E9D008CEB30 /* LaunchScreen.storyboard */,
 				2D3C63E02A450E9D008CEB30 /* Info.plist */,
 			);
 			path = GitHubExplorer;
@@ -88,7 +82,6 @@
 				225A8214F70AEBACF3DC06DF /* Pods-GitHubExplorer.debug.xcconfig */,
 				7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,8 +114,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				CLASSPREFIX = GHE;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
+				ORGANIZATIONNAME = "Copyright © 2023 GitHubExplorer. All rights reserved.";
 				TargetAttributes = {
 					2D3C63CE2A450E9B008CEB30 = {
 						CreatedOnToolsVersion = 14.3;
@@ -152,9 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D3C63DF2A450E9D008CEB30 /* LaunchScreen.storyboard in Resources */,
 				2D3C63DC2A450E9D008CEB30 /* Assets.xcassets in Resources */,
-				2D3C63DA2A450E9B008CEB30 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,32 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D3C63D72A450E9B008CEB30 /* ViewController.swift in Sources */,
+				2D3C63D72A450E9B008CEB30 /* GHEViewController.swift in Sources */,
 				2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */,
 				2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		2D3C63D82A450E9B008CEB30 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D3C63D92A450E9B008CEB30 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2D3C63DD2A450E9D008CEB30 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D3C63DE2A450E9D008CEB30 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2D3C63E12A450E9D008CEB30 /* Debug */ = {
@@ -360,7 +334,6 @@
 				INFOPLIST_FILE = GitHubExplorer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,7 +362,6 @@
 				INFOPLIST_FILE = GitHubExplorer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
