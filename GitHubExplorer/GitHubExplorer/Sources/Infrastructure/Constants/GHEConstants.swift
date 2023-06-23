@@ -12,6 +12,6 @@ import Foundation
 enum GHEConstants {
     // MARK: - PathApi
     class GHEPathApi {
-        let users = "https://api.github.com/users"
+        let users = "users"
     }
 }
