@@ -25,6 +25,8 @@
 		2DAAD2F52A45D8800077A45E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2F42A45D8800077A45E /* LoadingView.swift */; };
 		2DAAD2F72A45DA5B0077A45E /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2F62A45DA5B0077A45E /* UIViewAnimations.swift */; };
 		2DAAD2FD2A4609700077A45E /* CoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2DAAD2FC2A4609700077A45E /* CoreSwift */; };
+		2DAAD3002A4614A80077A45E /* GHEProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2FF2A4614A80077A45E /* GHEProfileCell.swift */; };
+		2DAAD3032A461A5B0077A45E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3022A461A5B0077A45E /* BaseViewController.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		2DAAD2F12A45D2ED0077A45E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		2DAAD2F42A45D8800077A45E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2DAAD2F62A45DA5B0077A45E /* UIViewAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
+		2DAAD2FF2A4614A80077A45E /* GHEProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEProfileCell.swift; sourceTree = "<group>"; };
+		2DAAD3022A461A5B0077A45E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +166,7 @@
 		2DAAD2A62A45B8D80077A45E /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2DAAD3012A461A440077A45E /* BaseController */,
 				2DAAD2F32A45D8710077A45E /* LoadingView */,
 				2DAAD2F02A45D2DD0077A45E /* HeaderView */,
 				2DAAD2A72A45B8E70077A45E /* Helpers */,
@@ -230,6 +235,7 @@
 		2DAAD2E92A45D0080077A45E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2DAAD2FE2A46148E0077A45E /* Views */,
 				2DAAD2EB2A45D01E0077A45E /* Cordinator */,
 				2DAAD2EA2A45D0110077A45E /* Controllers */,
 			);
@@ -267,6 +273,22 @@
 				2DAAD2F42A45D8800077A45E /* LoadingView.swift */,
 			);
 			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		2DAAD2FE2A46148E0077A45E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2FF2A4614A80077A45E /* GHEProfileCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2DAAD3012A461A440077A45E /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3022A461A5B0077A45E /* BaseViewController.swift */,
+			);
+			path = BaseController;
 			sourceTree = "<group>";
 		};
 		3C0C73473CB9B4B9735F8EB7 /* Frameworks */ = {
@@ -429,12 +451,14 @@
 				2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */,
 				2DAAD2F22A45D2ED0077A45E /* HeaderView.swift in Sources */,
 				2DAAD2DE2A45C45B0077A45E /* GHEManager.swift in Sources */,
+				2DAAD3032A461A5B0077A45E /* BaseViewController.swift in Sources */,
 				2DAAD2AB2A45B98A0077A45E /* UIViewConstraints.swift in Sources */,
 				2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */,
 				2DAAD2ED2A45D0420077A45E /* GHECordinator.swift in Sources */,
 				2DAAD2F72A45DA5B0077A45E /* UIViewAnimations.swift in Sources */,
 				2DAAD2F52A45D8800077A45E /* LoadingView.swift in Sources */,
 				2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */,
+				2DAAD3002A4614A80077A45E /* GHEProfileCell.swift in Sources */,
 				2DAAD2AE2A45BA920077A45E /* GHEOperation.swift in Sources */,
 				2DAAD2EF2A45D1F20077A45E /* GHEWelcomeViewController.swift in Sources */,
 				2DAAD2E62A45C7C60077A45E /* GHEBusiness.swift in Sources */,
