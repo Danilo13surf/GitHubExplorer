@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class GHECordinator {
+public class GHEListUserCordinator {
     private var navigationController: UINavigationController?
 
     // MARK: - Initialize
@@ -21,11 +21,14 @@ public class GHECordinator {
     
     public func start() {
         let viewModel = GHEViewModel(showNextFlow: showNextFlow)
-        guard let viewController = GHEViewController.instantiate(viewModel: viewModel) else { return }
+        guard let viewController = GHEListUserViewController.instantiate(viewModel: viewModel) else { return }
         viewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     // MARK: - Private Methods
-    private func showNextFlow(model: GHEListRepositoryResponse?) { }
+    private func showNextFlow(model: GHEResponse?) {
+        let coordinator = GHEUserProfileCordinator(navigationController: navigationController)
+           coordinator.start(model: model)
+    }
 }

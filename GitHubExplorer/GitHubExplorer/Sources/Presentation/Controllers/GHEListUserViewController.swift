@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GHEViewController: BaseViewController {
+class GHEListUserViewController: BaseViewController {
     
     // MARK: - Constants
     private enum Constants {
@@ -47,8 +47,8 @@ class GHEViewController: BaseViewController {
     }()
     
     // MARK: - Instantiate
-    static func instantiate(viewModel: GHEViewModelProtocol) -> GHEViewController? {
-        let viewController = GHEViewController()
+    static func instantiate(viewModel: GHEViewModelProtocol) -> GHEListUserViewController? {
+        let viewController = GHEListUserViewController()
         viewController.viewModel = viewModel
         return viewController
     }
@@ -111,7 +111,7 @@ class GHEViewController: BaseViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension GHEViewController: UITableViewDataSource {
+extension GHEListUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.model?.count ?? .zero
     }
@@ -126,10 +126,10 @@ extension GHEViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDataSource
 
-extension GHEViewController: UITableViewDelegate {
+extension GHEListUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async { [self] in
-
+            viewModel?.showMoreInfo(model: viewModel?.model?[indexPath.row])
         }
     }
 }
