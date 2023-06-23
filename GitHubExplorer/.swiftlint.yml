@@ -1,0 +1,234 @@
+disabled_rules: # rule identifiers to exclude from running
+    - line_length
+    - trailing_whitespace
+    - inclusive_language
+
+opt_in_rules: # some rules are only opt-in
+    - anyobject_protocol
+    - array_init
+    - attributes
+    - closure_body_length
+    - closure_end_indentation
+    - closure_spacing
+    - collection_alignment
+    - contains_over_first_not_nil
+    - convenience_type
+    - discouraged_object_literal
+    - empty_count
+    - empty_string
+    - empty_xctest_method
+    - explicit_failure_calls
+    - explicit_init
+    - fallthrough
+    - fatal_error_message
+    - first_where
+    - file_header
+    - file_types_order
+    - force_unwrapping
+    - identical_operands
+    - implicitly_unwrapped_optional
+    - joined_default_parameter
+    - let_var_whitespace
+    - literal_expression_end_indentation
+    - legacy_random
+    - multiline_arguments
+    - multiline_parameters
+    - multiline_function_chains
+    - multiline_literal_brackets
+    - modifier_order
+    - nimble_operator
+    - no_extension_access_modifier
+    - number_separator
+    - operator_usage_whitespace
+    - overridden_super_call
+    - override_in_extension
+    - pattern_matching_keywords
+    - private_action
+    - private_outlet
+    - prohibited_super_call
+    - quick_discouraged_call
+    - quick_discouraged_focused_test
+    - redundant_nil_coalescing
+    - redundant_type_annotation
+    - return_arrow_whitespace
+    - single_test_class
+    - sorted_first_last
+    - sorted_imports
+    - static_operator
+    - strict_fileprivate
+    - switch_case_on_newline
+    - toggle_bool
+    - trailing_closure
+    - type_contents_order
+    - unavailable_function
+    - unneeded_parentheses_in_closure_argument
+    - untyped_error_in_catch
+    - vertical_parameter_alignment_on_call
+    - vertical_whitespace_closing_braces
+    - yoda_condition
+    - xct_specific_matcher
+    - weak_delegate
+
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+    - explicit_self
+    - unused_declaration
+    - unused_import
+
+included: # paths to include during linting. `--path` is ignored if present.
+    - GitHubExplorer
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.'
+    - GitHubExplorer/SupportFiles/**
+
+custom_rules:
+    explicit_failure_calls:
+    name: "Avoid asserting 'false'"
+    regex: '((assert|precondition)\(false)'
+    message: "Use assertionFailure() or preconditionFailure() instead."
+    severity: error
+    
+    weak_self_leak:
+    name: "Weak Self Leak"
+    regex: '(.bind\ *\{\ (?!\[weak\ self\]))'
+    message: "Prefer use weak self on binds, to avoid memory leaks."
+    severity: warning
+
+file_header:
+    severity: error
+    required_pattern: |
+                    \/\/
+                    \/\/  GHE.*?\.swift
+                    \/\/  GitHubExplorer.*
+                    \/\/
+                    \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{2}\.
+                    \/\/  Copyright © \d{4} GitHubExplorer\. All rights reserved\.
+                    \/\/
+
+no_extension_access_modifier:
+    severity: warning
+
+trailing_semicolon: error
+
+class_delegate_protocol:
+    severity: error
+
+closure_parameter_position:
+    severity: error
+
+colon:
+    severity: error
+
+comma:
+    severity: error
+
+control_statement:
+    severity: error
+
+discouraged_direct_init:
+    severity: error
+
+empty_enum_arguments:
+    severity: error
+
+empty_parentheses_with_trailing_closure:
+    severity: error
+
+for_where:
+    severity: error
+
+implicit_getter:
+    severity: error
+
+legacy_constructor:
+    severity: error
+
+mark:
+    severity: error
+
+multiple_closures_with_trailing_closure:
+    severity: error
+
+notification_center_detachment:
+    severity: error
+
+opening_brace:
+    severity: error
+
+private_over_fileprivate:
+    severity: error
+
+redundant_discardable_let:
+    severity: error
+
+redundant_optional_initialization:
+    severity: error
+
+redundant_void_return:
+    severity: error
+
+syntactic_sugar:
+    severity: error
+
+todo:
+    severity: error
+
+trailing_newline:
+    severity: error
+
+unneeded_break_in_switch:
+    severity: error
+
+unused_closure_parameter:
+    severity: error
+
+unused_optional_binding:
+    severity: error
+
+vertical_parameter_alignment:
+    severity: error
+
+void_return:
+    severity: error
+
+weak_delegate:
+    severity: error
+
+xctfail_message:
+    severity: error
+
+type_name:
+  min_length: 3
+  max_length:
+    warning: 60
+    error: 70
+
+file_length:
+    warning: 500
+
+cyclomatic_complexity:
+    warning: 8
+    error: 10
+
+closure_body_length:
+    warning: 40
+    error: 45
+
+function_body_length:
+    warning: 40
+    error: 45
+
+type_body_length:
+    warning: 200
+    error: 250
+
+nesting:
+  type_level:
+    warning: 3
+    error: 4
+  function_level:
+    warning: 4
+    error: 6
+
+identifier_name:
+  allowed_symbols: "_"
+  min_length: 2
