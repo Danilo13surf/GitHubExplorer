@@ -61,6 +61,7 @@ class GHEViewModel: GHEViewModelProtocol {
     func showMoreInfo(model: GHEResponse?) {
         self.showNextFlow(model)
     }
+    
     // MARK: - Private Methods
     private func updateStatus(status: GHEStatus) {
         self.status.value = status
