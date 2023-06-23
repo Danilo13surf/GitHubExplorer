@@ -14,8 +14,17 @@
 		2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */; };
 		2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */; };
 		2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A42A45B6880077A45E /* GHEConstants.swift */; };
-		2DAAD2A92A45B8FC0077A45E /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A82A45B8FC0077A45E /* Dynamic.swift */; };
 		2DAAD2AB2A45B98A0077A45E /* UIViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */; };
+		2DAAD2AE2A45BA920077A45E /* GHEOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2AD2A45BA920077A45E /* GHEOperation.swift */; };
+		2DAAD2DE2A45C45B0077A45E /* GHEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2DD2A45C45B0077A45E /* GHEManager.swift */; };
+		2DAAD2E62A45C7C60077A45E /* GHEBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2E52A45C7C60077A45E /* GHEBusiness.swift */; };
+		2DAAD2E82A45CA7D0077A45E /* GHEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2E72A45CA7D0077A45E /* GHEViewModel.swift */; };
+		2DAAD2ED2A45D0420077A45E /* GHECordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2EC2A45D0420077A45E /* GHECordinator.swift */; };
+		2DAAD2EF2A45D1F20077A45E /* GHEWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2EE2A45D1F20077A45E /* GHEWelcomeViewController.swift */; };
+		2DAAD2F22A45D2ED0077A45E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2F12A45D2ED0077A45E /* HeaderView.swift */; };
+		2DAAD2F52A45D8800077A45E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2F42A45D8800077A45E /* LoadingView.swift */; };
+		2DAAD2F72A45DA5B0077A45E /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2F62A45DA5B0077A45E /* UIViewAnimations.swift */; };
+		2DAAD2FD2A4609700077A45E /* CoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2DAAD2FC2A4609700077A45E /* CoreSwift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +40,16 @@
 		2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListRepositoryResponse.swift; sourceTree = "<group>"; };
 		2DAAD2A42A45B6880077A45E /* GHEConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEConstants.swift; sourceTree = "<group>"; };
-		2DAAD2A82A45B8FC0077A45E /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewConstraints.swift; sourceTree = "<group>"; };
+		2DAAD2AD2A45BA920077A45E /* GHEOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEOperation.swift; sourceTree = "<group>"; };
+		2DAAD2DD2A45C45B0077A45E /* GHEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEManager.swift; sourceTree = "<group>"; };
+		2DAAD2E52A45C7C60077A45E /* GHEBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEBusiness.swift; sourceTree = "<group>"; };
+		2DAAD2E72A45CA7D0077A45E /* GHEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEViewModel.swift; sourceTree = "<group>"; };
+		2DAAD2EC2A45D0420077A45E /* GHECordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHECordinator.swift; sourceTree = "<group>"; };
+		2DAAD2EE2A45D1F20077A45E /* GHEWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEWelcomeViewController.swift; sourceTree = "<group>"; };
+		2DAAD2F12A45D2ED0077A45E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		2DAAD2F42A45D8800077A45E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		2DAAD2F62A45DA5B0077A45E /* UIViewAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */,
+				2DAAD2FD2A4609700077A45E /* CoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +89,6 @@
 			children = (
 				2D3C63F82A454824008CEB30 /* Sources */,
 				2D3C63F72A45395B008CEB30 /* SupportFiles */,
-				2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */,
 				2D3C63E02A450E9D008CEB30 /* Info.plist */,
 				2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */,
 			);
@@ -91,6 +108,8 @@
 		2D3C63F82A454824008CEB30 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2DAAD2E92A45D0080077A45E /* Presentation */,
+				2DAAD2E22A45C7820077A45E /* Domain */,
 				2D3C63F92A454881008CEB30 /* Data */,
 				2DAAD2A22A45B63D0077A45E /* Infrastructure */,
 			);
@@ -101,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				2D3C63FA2A454887008CEB30 /* Model */,
+				2DAAD2AC2A45BA750077A45E /* Operation */,
+				2DAAD2DC2A45C41B0077A45E /* Manager */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -141,6 +162,8 @@
 		2DAAD2A62A45B8D80077A45E /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2DAAD2F32A45D8710077A45E /* LoadingView */,
+				2DAAD2F02A45D2DD0077A45E /* HeaderView */,
 				2DAAD2A72A45B8E70077A45E /* Helpers */,
 			);
 			path = CoreComponents;
@@ -149,10 +172,101 @@
 		2DAAD2A72A45B8E70077A45E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				2DAAD2A82A45B8FC0077A45E /* Dynamic.swift */,
-				2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */,
+				2DAAD2D22A45C0CF0077A45E /* Extensions */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2DAAD2AC2A45BA750077A45E /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2AD2A45BA920077A45E /* GHEOperation.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		2DAAD2D22A45C0CF0077A45E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */,
+				2DAAD2F62A45DA5B0077A45E /* UIViewAnimations.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2DAAD2DC2A45C41B0077A45E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2DD2A45C45B0077A45E /* GHEManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2DAAD2E22A45C7820077A45E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2E42A45C7BD0077A45E /* ViewModel */,
+				2DAAD2E32A45C7A90077A45E /* Bussines */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2DAAD2E32A45C7A90077A45E /* Bussines */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2E52A45C7C60077A45E /* GHEBusiness.swift */,
+			);
+			path = Bussines;
+			sourceTree = "<group>";
+		};
+		2DAAD2E42A45C7BD0077A45E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2E72A45CA7D0077A45E /* GHEViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2DAAD2E92A45D0080077A45E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2EB2A45D01E0077A45E /* Cordinator */,
+				2DAAD2EA2A45D0110077A45E /* Controllers */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2DAAD2EA2A45D0110077A45E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */,
+				2DAAD2EE2A45D1F20077A45E /* GHEWelcomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2DAAD2EB2A45D01E0077A45E /* Cordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2EC2A45D0420077A45E /* GHECordinator.swift */,
+			);
+			path = Cordinator;
+			sourceTree = "<group>";
+		};
+		2DAAD2F02A45D2DD0077A45E /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2F12A45D2ED0077A45E /* HeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		2DAAD2F32A45D8710077A45E /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD2F42A45D8800077A45E /* LoadingView.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		3C0C73473CB9B4B9735F8EB7 /* Frameworks */ = {
@@ -191,6 +305,9 @@
 			dependencies = (
 			);
 			name = GitHubExplorer;
+			packageProductDependencies = (
+				2DAAD2FC2A4609700077A45E /* CoreSwift */,
+			);
 			productName = GitHubExplorer;
 			productReference = 2D3C63CF2A450E9B008CEB30 /* GitHubExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +338,9 @@
 				Base,
 			);
 			mainGroup = 2D3C63C62A450E9B008CEB30;
+			packageReferences = (
+				2DAAD2FB2A4609700077A45E /* XCRemoteSwiftPackageReference "CoreSwift" */,
+			);
 			productRefGroup = 2D3C63D02A450E9B008CEB30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -307,11 +427,19 @@
 				2D3C63D72A450E9B008CEB30 /* GHEViewController.swift in Sources */,
 				2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */,
 				2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */,
+				2DAAD2F22A45D2ED0077A45E /* HeaderView.swift in Sources */,
+				2DAAD2DE2A45C45B0077A45E /* GHEManager.swift in Sources */,
 				2DAAD2AB2A45B98A0077A45E /* UIViewConstraints.swift in Sources */,
-				2DAAD2A92A45B8FC0077A45E /* Dynamic.swift in Sources */,
 				2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */,
+				2DAAD2ED2A45D0420077A45E /* GHECordinator.swift in Sources */,
+				2DAAD2F72A45DA5B0077A45E /* UIViewAnimations.swift in Sources */,
+				2DAAD2F52A45D8800077A45E /* LoadingView.swift in Sources */,
 				2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */,
+				2DAAD2AE2A45BA920077A45E /* GHEOperation.swift in Sources */,
+				2DAAD2EF2A45D1F20077A45E /* GHEWelcomeViewController.swift in Sources */,
+				2DAAD2E62A45C7C60077A45E /* GHEBusiness.swift in Sources */,
 				2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */,
+				2DAAD2E82A45CA7D0077A45E /* GHEViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +582,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = danilocarlosribeiro.GitHubExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SERVER_URL = "https://api.github.com/";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,6 +611,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = danilocarlosribeiro.GitHubExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SERVER_URL = "https://api.github.com/";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -510,6 +640,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2DAAD2FB2A4609700077A45E /* XCRemoteSwiftPackageReference "CoreSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/andrecampopiano/CoreSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2DAAD2FC2A4609700077A45E /* CoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DAAD2FB2A4609700077A45E /* XCRemoteSwiftPackageReference "CoreSwift" */;
+			productName = CoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D3C63C72A450E9B008CEB30 /* Project object */;
 }

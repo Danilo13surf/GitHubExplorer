@@ -1,20 +1,24 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.12)
+  - ReachabilitySwift (5.0.0)
   - SwiftLint (0.52.3)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - ReachabilitySwift
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
+    - ReachabilitySwift
     - SwiftLint
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftLint: 76ec9c62ad369cff2937474cb34c9af3fa270b7b
 
-PODFILE CHECKSUM: b0e8ddc602fb4ffa5662ecaafff363563f239942
+PODFILE CHECKSUM: 25fba32766159ed76165c641407923f9d915d380
 
 COCOAPODS: 1.12.1

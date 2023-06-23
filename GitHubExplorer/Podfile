@@ -8,6 +8,7 @@ load 'PodfileSupport.rb'
 def external_libs
   pod 'SwiftLint'
   pod 'IQKeyboardManagerSwift'
+  pod 'ReachabilitySwift'
 end
 
 target 'GitHubExplorer' do
