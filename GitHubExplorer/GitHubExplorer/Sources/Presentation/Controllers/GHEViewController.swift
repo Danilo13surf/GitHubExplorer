@@ -113,7 +113,7 @@ class GHEViewController: BaseViewController {
 // MARK: - UITableViewDataSource
 extension GHEViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.model?.count ?? 10
+        return viewModel?.model?.count ?? .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
