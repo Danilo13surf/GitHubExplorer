@@ -9,7 +9,7 @@
 import CoreSwift
 import Foundation
 
-typealias GHENextFlow = (_ model: GHEListRepositoryResponse?) -> Void
+typealias GHENextFlow = (_ model: GHEResponse?) -> Void
 
 enum GHEStatus {
     case loading
@@ -20,10 +20,11 @@ enum GHEStatus {
 protocol GHEViewModelProtocol {
     var status: Dynamic<GHEStatus?> { get }
     var model: [GHEResponse]? { get }
-    var listRepository: GHEListRepositoryResponse? { get }
+    var listRepository: GHEResponse? { get }
     
     init(manager: GHEManagerProtocol?, showNextFlow: @escaping GHENextFlow)
     
+    func showMoreInfo(model: GHEResponse?)
     func fetchUssers()
 }
 
@@ -33,7 +34,7 @@ class GHEViewModel: GHEViewModelProtocol {
     private var manager: GHEManagerProtocol?
     var status = Dynamic<GHEStatus?>(.loading)
     var model: [GHEResponse]?
-    var listRepository: GHEListRepositoryResponse?
+    var listRepository: GHEResponse?
     var showNextFlow: GHENextFlow
     
     // MARK: - Initialize
@@ -57,6 +58,9 @@ class GHEViewModel: GHEViewModelProtocol {
         }
     }
     
+    func showMoreInfo(model: GHEResponse?) {
+        self.showNextFlow(model)
+    }
     // MARK: - Private Methods
     private func updateStatus(status: GHEStatus) {
         self.status.value = status
