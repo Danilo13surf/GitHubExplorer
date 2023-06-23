@@ -29,6 +29,7 @@
 		2DAAD3032A461A5B0077A45E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3022A461A5B0077A45E /* BaseViewController.swift */; };
 		2DAAD3052A4631C90077A45E /* GHEUserProfileCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3042A4631C90077A45E /* GHEUserProfileCordinator.swift */; };
 		2DAAD3072A4632DA0077A45E /* GHEUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3062A4632DA0077A45E /* GHEUserProfileViewModel.swift */; };
+		2DAAD3092A4634650077A45E /* GHEUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3082A4634650077A45E /* GHEUserProfileViewController.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		2DAAD3022A461A5B0077A45E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2DAAD3042A4631C90077A45E /* GHEUserProfileCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileCordinator.swift; sourceTree = "<group>"; };
 		2DAAD3062A4632DA0077A45E /* GHEUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileViewModel.swift; sourceTree = "<group>"; };
+		2DAAD3082A4634650077A45E /* GHEUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileViewController.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +254,7 @@
 			children = (
 				2D3C63D62A450E9B008CEB30 /* GHEListUserViewController.swift */,
 				2DAAD2EE2A45D1F20077A45E /* GHEWelcomeViewController.swift */,
+				2DAAD3082A4634650077A45E /* GHEUserProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				2DAAD3002A4614A80077A45E /* GHEProfileCell.swift in Sources */,
 				2DAAD2AE2A45BA920077A45E /* GHEOperation.swift in Sources */,
 				2DAAD2EF2A45D1F20077A45E /* GHEWelcomeViewController.swift in Sources */,
+				2DAAD3092A4634650077A45E /* GHEUserProfileViewController.swift in Sources */,
 				2DAAD2E62A45C7C60077A45E /* GHEBusiness.swift in Sources */,
 				2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */,
 				2DAAD2E82A45CA7D0077A45E /* GHEViewModel.swift in Sources */,
