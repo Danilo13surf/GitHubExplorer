@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GHEWelcomeViewController: UIViewController {
+class GHEWelcomeViewController: BaseViewController {
     // MARK: - Constants
     private enum Constants {
         static let welcomeText = "Bem vindo a busca de usuarios do github, toque na tela para continuar"
@@ -26,19 +26,18 @@ class GHEWelcomeViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupWelcomeLabel() {
-        view.backgroundColor = .white
-        view.addSubview(headerView)
+        contentView.addSubview(headerView)
         headerView.myAnchor(
-            centerX: (view.centerXAnchor, .zero),
-            centerY: (view.centerYAnchor, .zero),
-            leading: (view.leadingAnchor, 24),
-            trailing: (view.trailingAnchor, 24)
+            centerX: (contentView.centerXAnchor, .zero),
+            centerY: (contentView.centerYAnchor, .zero),
+            leading: (contentView.leadingAnchor, 24),
+            trailing: (contentView.trailingAnchor, 24)
         )
     }
     
     private func setupGestureRecognizer() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(showNextFlow))
-        view.addGestureRecognizer(tap)
+        contentView.addGestureRecognizer(tap)
     }
     
     @objc
