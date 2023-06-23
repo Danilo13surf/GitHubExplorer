@@ -11,6 +11,7 @@
 		2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63D42A450E9B008CEB30 /* SceneDelegate.swift */; };
 		2D3C63D72A450E9B008CEB30 /* GHEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */; };
 		2D3C63DC2A450E9D008CEB30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */; };
+		2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEViewController.swift; sourceTree = "<group>"; };
 		2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D3C63E02A450E9D008CEB30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEResponse.swift; sourceTree = "<group>"; };
 		2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +61,7 @@
 		2D3C63D12A450E9B008CEB30 /* GitHubExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				2D3C63F82A454824008CEB30 /* Sources */,
 				2D3C63F72A45395B008CEB30 /* SupportFiles */,
 				2D3C63D62A450E9B008CEB30 /* GHEViewController.swift */,
 				2D3C63E02A450E9D008CEB30 /* Info.plist */,
@@ -74,6 +77,38 @@
 				2D3C63D22A450E9B008CEB30 /* AppDelegate.swift */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		2D3C63F82A454824008CEB30 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2D3C63F92A454881008CEB30 /* Data */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2D3C63F92A454881008CEB30 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2D3C63FA2A454887008CEB30 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2D3C63FA2A454887008CEB30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D3C63FB2A45488E008CEB30 /* Response */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D3C63FB2A45488E008CEB30 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		3C0C73473CB9B4B9735F8EB7 /* Frameworks */ = {
@@ -126,7 +161,7 @@
 				CLASSPREFIX = GHE;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
-				ORGANIZATIONNAME = "Copyright © 2023 GitHubExplorer. All rights reserved.";
+				ORGANIZATIONNAME = GitHubExplorer;
 				TargetAttributes = {
 					2D3C63CE2A450E9B008CEB30 = {
 						CreatedOnToolsVersion = 14.3;
@@ -228,6 +263,7 @@
 				2D3C63D72A450E9B008CEB30 /* GHEViewController.swift in Sources */,
 				2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */,
 				2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */,
+				2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
