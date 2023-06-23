@@ -8,107 +8,85 @@
 
 import Foundation
 
-// MARK: - GHEOwner
-struct GHEOwner {
-    let login: String?
-    let id: Int?
-    let nodeID: String?
-    let avatarURL: String?
-    let gravatarID: String?
-    let url: String?
-    let htmlURL: String?
-    let followersURL: String?
-    let followingURL: String?
-    let gistsURL: String?
-    let starredURL: String?
-    let subscriptionsURL: String?
-    let organizationsURL: String?
-    let reposURL: String?
-    let eventsURL: String?
-    let receivedEventsURL: String?
-    let type: String?
-    let siteAdmin: Bool?
-}
-
 // MARK: - GHEListRepositoryResponse
 struct GHEListRepositoryResponse {
     let id: Int?
-    let nodeID: String?
+    let node_id: String?
     let name: String?
     let fullName: String?
     let welcome9Private: Bool?
-    let owner: GHEOwner?
-    let htmlURL: String?
+    let owner: GHEResponse?
+    let html_url: String?
     let welcome9Description: NSNull?
     let fork: Bool?
     let url: String?
-    let forksURL: String?
-    let keysURL: String?
-    let collaboratorsURL: String?
-    let teamsURL: String?
-    let hooksURL: String?
-    let issueEventsURL: String?
-    let eventsURL: String?
-    let assigneesURL: String?
-    let branchesURL: String?
-    let tagsURL: String?
-    let blobsURL: String?
-    let gitTagsURL: String?
-    let gitRefsURL: String?
-    let treesURL: String?
-    let statusesURL: String?
-    let languagesURL: String?
-    let stargazersURL: String?
-    let contributorsURL: String?
-    let subscribersURL: String?
-    let subscriptionURL: String?
-    let commitsURL: String?
-    let gitCommitsURL: String?
-    let commentsURL: String?
-    let issueCommentURL: String?
-    let contentsURL: String?
-    let compareURL: String?
-    let mergesURL: String?
-    let archiveURL: String?
-    let downloadsURL: String?
-    let issuesURL: String?
-    let pullsURL: String?
-    let milestonesURL: String?
-    let notificationsURL: String?
-    let labelsURL: String?
-    let releasesURL: String?
-    let deploymentsURL: String?
-    let createdAt: String?
-    let updatedAt: String?
-    let pushedAt: Date?
-    let gitURL: String?
-    let sshURL: String?
-    let cloneURL: String?
-    let svnURL: String?
+    let forks_url: String?
+    let keys_url: String?
+    let collaborators_url: String?
+    let teams_url: String?
+    let hooks_url: String?
+    let issue_events_url: String?
+    let events_url: String?
+    let assignees_url: String?
+    let branches_url: String?
+    let tags_url: String?
+    let blobs_url: String?
+    let git_tags_url: String?
+    let git_refs_url: String?
+    let trees_url: String?
+    let statuses_url: String?
+    let languages_url: String?
+    let stargazers_url: String?
+    let contributors_url: String?
+    let subscribers_url: String?
+    let subscription_url: String?
+    let commits_url: String?
+    let git_commits_url: String?
+    let comments_url: String?
+    let issue_comment_url: String?
+    let contents_url: String?
+    let compare_url: String?
+    let merges_url: String?
+    let archive_url: String?
+    let downloads_url: String?
+    let issues_url: String?
+    let pulls_url: String?
+    let milestones_url: String?
+    let notifications_url: String?
+    let labels_url: String?
+    let releases_url: String?
+    let deployments_url: String?
+    let created_at: String?
+    let updated_at: String?
+    let pushed_at: Date?
+    let git_url: String?
+    let ssh_url: String?
+    let clone_url: String?
+    let svn_url: String?
     let homepage: NSNull?
     let size: String?
-    let stargazersCount: String?
-    let watchersCount: Int?
+    let stargazers_count: String?
+    let watchers_count: Int?
     let language: String?
-    let hasIssues: String?
-    let hasProjects: String?
-    let hasDownloads: String?
-    let hasWiki: Bool?
-    let hasPages: Bool?
-    let hasDiscussions: Bool?
-    let forksCount: Int?
-    let mirrorURL: NSNull?
+    let has_issues: String?
+    let has_projects: String?
+    let has_downloads: String?
+    let has_wiki: Bool?
+    let has_pages: Bool?
+    let has_discussions: Bool?
+    let forks_count: Int?
+    let mirror_url: NSNull?
     let archived: Bool?
     let disabled: Bool?
-    let openIssuesCount: Int?
+    let open_issues_count: Int?
     let license: NSNull?
-    let allowForking: Bool?
-    let isTemplate: Bool?
-    let webCommitSignoffRequired: Bool?
+    let allow_forking: Bool?
+    let is_template: Bool?
+    let web_commit_signoff_required: Bool?
     let topics: [Any??]
     let visibility: String?
     let forks: Int?
-    let openIssues: Int?
+    let open_issues: Int?
     let watchers: Int?
-    let defaultBranch: String?
+    let default_branch: String?
 }
