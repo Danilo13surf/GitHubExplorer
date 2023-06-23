@@ -21,4 +21,3 @@ class GHEViewController: UIViewController {
         self.view = view
     }
 }
-
