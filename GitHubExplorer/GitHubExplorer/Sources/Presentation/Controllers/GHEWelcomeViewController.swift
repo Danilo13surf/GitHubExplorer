@@ -42,7 +42,7 @@ class GHEWelcomeViewController: BaseViewController {
     
     @objc
     private func showNextFlow() {
-        let coordinator = GHECordinator(navigationController: navigationController)
+        let coordinator = GHEListUserCordinator(navigationController: navigationController)
            coordinator.start()
     }
 }
