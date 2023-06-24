@@ -22,6 +22,7 @@ class GHEUserProfileViewController: BaseViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.registerCell(GHEProfileCell.self)
+        tableView.registerCell(GHERepositoryCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.bounces = false
