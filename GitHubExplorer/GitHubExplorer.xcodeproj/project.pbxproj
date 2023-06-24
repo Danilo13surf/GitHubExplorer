@@ -35,6 +35,11 @@
 		2DAAD3212A46F5180077A45E /* GHEUserProfileBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3202A46F5180077A45E /* GHEUserProfileBussines.swift */; };
 		2DAAD3242A46F8670077A45E /* GHEUserProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3232A46F8670077A45E /* GHEUserProfileManager.swift */; };
 		2DAAD3262A470DEB0077A45E /* DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3252A470DEB0077A45E /* DateFormater.swift */; };
+		2DAAD3362A471A760077A45E /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3332A4718720077A45E /* BottomSheetViewController.swift */; };
+		2DAAD3372A471A7E0077A45E /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3352A4718720077A45E /* BottomSheetView.swift */; };
+		2DAAD3382A471A800077A45E /* BottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3302A47186F0077A45E /* BottomSheetViewModel.swift */; };
+		2DAAD3392A471A830077A45E /* BottomSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD32D2A4718690077A45E /* BottomSheetModel.swift */; };
+		2DAAD33B2A471CAC0077A45E /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD33A2A471CAC0077A45E /* UILabel.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +75,11 @@
 		2DAAD3202A46F5180077A45E /* GHEUserProfileBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileBussines.swift; sourceTree = "<group>"; };
 		2DAAD3232A46F8670077A45E /* GHEUserProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileManager.swift; sourceTree = "<group>"; };
 		2DAAD3252A470DEB0077A45E /* DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormater.swift; sourceTree = "<group>"; };
+		2DAAD32D2A4718690077A45E /* BottomSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetModel.swift; sourceTree = "<group>"; };
+		2DAAD3302A47186F0077A45E /* BottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewModel.swift; sourceTree = "<group>"; };
+		2DAAD3332A4718720077A45E /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		2DAAD3352A4718720077A45E /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		2DAAD33A2A471CAC0077A45E /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				2DAAD2FE2A46148E0077A45E /* Views */,
+				2DAAD32B2A47185E0077A45E /* BottomSheet */,
 				2DAAD3012A461A440077A45E /* BaseController */,
 				2DAAD2F32A45D8710077A45E /* LoadingView */,
 				2DAAD2F02A45D2DD0077A45E /* HeaderView */,
@@ -202,6 +213,7 @@
 				2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */,
 				2DAAD2F62A45DA5B0077A45E /* UIViewAnimations.swift */,
 				2DAAD3252A470DEB0077A45E /* DateFormater.swift */,
+				2DAAD33A2A471CAC0077A45E /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,6 +463,65 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		2DAAD32B2A47185E0077A45E /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3312A4718720077A45E /* Presentation */,
+				2DAAD32E2A47186F0077A45E /* Domain */,
+				2DAAD32C2A4718690077A45E /* Data */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		2DAAD32C2A4718690077A45E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD32D2A4718690077A45E /* BottomSheetModel.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2DAAD32E2A47186F0077A45E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD32F2A47186F0077A45E /* ViewModel */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2DAAD32F2A47186F0077A45E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3302A47186F0077A45E /* BottomSheetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2DAAD3312A4718720077A45E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3322A4718720077A45E /* Controller */,
+				2DAAD3342A4718720077A45E /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2DAAD3322A4718720077A45E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3332A4718720077A45E /* BottomSheetViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2DAAD3342A4718720077A45E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3352A4718720077A45E /* BottomSheetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3C0C73473CB9B4B9735F8EB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,7 +682,9 @@
 				2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */,
 				2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */,
 				2DAAD2F22A45D2ED0077A45E /* HeaderView.swift in Sources */,
+				2DAAD33B2A471CAC0077A45E /* UILabel.swift in Sources */,
 				2DAAD2DE2A45C45B0077A45E /* GHEListUserManager.swift in Sources */,
+				2DAAD3392A471A830077A45E /* BottomSheetModel.swift in Sources */,
 				2DAAD3032A461A5B0077A45E /* BaseViewController.swift in Sources */,
 				2DAAD2AB2A45B98A0077A45E /* UIViewConstraints.swift in Sources */,
 				2DAAD31F2A46F4030077A45E /* GHEListRepositorysOperation.swift in Sources */,
@@ -625,11 +698,14 @@
 				2DAAD3072A4632DA0077A45E /* GHEUserProfileViewModel.swift in Sources */,
 				2DAAD3212A46F5180077A45E /* GHEUserProfileBussines.swift in Sources */,
 				2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */,
+				2DAAD3362A471A760077A45E /* BottomSheetViewController.swift in Sources */,
 				2DAAD3002A4614A80077A45E /* GHEProfileCell.swift in Sources */,
 				2DAAD2AE2A45BA920077A45E /* GHEListUsersOperation.swift in Sources */,
 				2DAAD2EF2A45D1F20077A45E /* GHEWelcomeViewController.swift in Sources */,
 				2DAAD3092A4634650077A45E /* GHEUserProfileViewController.swift in Sources */,
+				2DAAD3382A471A800077A45E /* BottomSheetViewModel.swift in Sources */,
 				2DAAD2E62A45C7C60077A45E /* GHEListUsersBusiness.swift in Sources */,
+				2DAAD3372A471A7E0077A45E /* BottomSheetView.swift in Sources */,
 				2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */,
 				2DAAD2E82A45CA7D0077A45E /* GHEListUsersViewModel.swift in Sources */,
 			);
