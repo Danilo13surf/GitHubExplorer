@@ -39,7 +39,6 @@ class GHEListRepositorysOperation: NetworkingOperation {
     
     // MARK: - Private Methods
     private func buildRequestData() -> NetworkingRequestData {
-        return NetworkingRequestData(url: GHEConstants.GHEPathApi().users,
         return NetworkingRequestData(url: urlPath,
                                      httpMethod: .get,
                                      isAuthenticated: true)
