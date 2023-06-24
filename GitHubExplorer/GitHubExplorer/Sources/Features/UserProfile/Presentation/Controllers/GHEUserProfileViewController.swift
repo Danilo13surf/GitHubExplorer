@@ -84,14 +84,14 @@ extension GHEUserProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(GHEProfileCell.self, for: indexPath)
+        let profileCell = tableView.dequeueReusableCell(GHEProfileCell.self, for: indexPath)
+        let repositoryCell = tableView.dequeueReusableCell(GHERepositoryCell.self, for: indexPath)
         if indexPath.section == .zero && viewModel?.isDisplayingRepository.value == false {
-            cell.setup(title: viewModel?.model?.login, avatarUrl: viewModel?.model?.avatar_url, style: .completeInfo)
-            return cell
+            profileCell.setup(title: viewModel?.model?.login, avatarUrl: viewModel?.model?.avatar_url, style: .completeInfo)
+            return profileCell
         }
-        let listRepository = viewModel?.listRepository?[indexPath.row]
-        cell.setup(title: listRepository?.login, avatarUrl: listRepository?.avatar_url, style: .completeInfo)
-        return cell
+        repositoryCell.setup(title: viewModel?.listRepository?[indexPath.row].html_url)
+        return repositoryCell
     }
 }
 
