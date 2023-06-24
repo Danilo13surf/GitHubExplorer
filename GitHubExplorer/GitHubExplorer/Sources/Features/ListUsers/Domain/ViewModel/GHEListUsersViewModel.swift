@@ -15,12 +15,14 @@ enum GHEListUsersStatus {
     case loading
     case loaded
     case error
+    case popToRoot
 }
 
 protocol GHEListUsersViewModelProtocol {
     var status: Dynamic<GHEListUsersStatus?> { get }
     var model: [GHEResponse]? { get }
     var listRepository: GHEResponse? { get }
+    var bottomSheetViewModel: BottomSheetViewModelProtocol? { get }
     
     init(manager: GHEListUserManagerProtocol?, showNextFlow: @escaping GHENextFlow)
     
@@ -36,11 +38,13 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     var model: [GHEResponse]?
     var listRepository: GHEResponse?
     var showNextFlow: GHENextFlow
+    var bottomSheetViewModel: BottomSheetViewModelProtocol?
     
     // MARK: - Initialize
     required init(manager: GHEListUserManagerProtocol? = GHEListUserManager(), showNextFlow: @escaping GHENextFlow) {
         self.manager = manager
         self.showNextFlow = showNextFlow
+        self.setupBottonSheetViewModel()
     }
     
     // MARK: - Open Methods
@@ -51,10 +55,11 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
             case .success(let model):
                 self?.model = model
                 self?.updateStatus(status: .loaded)
+                return
             case .failure:
                 self?.updateStatus(status: .error)
+                return
             }
-            self?.updateStatus(status: .loaded)
         }
     }
     
@@ -65,5 +70,21 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     // MARK: - Private Methods
     private func updateStatus(status: GHEListUsersStatus) {
         self.status.value = status
+    }
+    
+    private func setupBottonSheetViewModel() {
+        self.bottomSheetViewModel = BottomSheetViewModel(model: setupBottonSheetModel(), primaryButtonFlow: primaryButtonFlow, rigthButtonFlow: rigthButtonFlow)
+    }
+    
+    private func setupBottonSheetModel() -> BottomSheetModel {
+        return BottomSheetModel(title: GHEConstants.Constants.alertMessage, description: GHEConstants.Constants.alertDescription, primaryButtonName: GHEConstants.Constants.primaryButtonText)
+    }
+    
+    private func primaryButtonFlow() {
+        self.fetchUssers()
+    }
+    
+    private func rigthButtonFlow() {
+        updateStatus(status: .popToRoot)
     }
 }

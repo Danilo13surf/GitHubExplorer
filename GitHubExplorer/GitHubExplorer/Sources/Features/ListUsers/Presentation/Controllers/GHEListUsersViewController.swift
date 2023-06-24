@@ -74,6 +74,11 @@ class GHEListUsersViewController: BaseViewController {
                 }
             case .error:
                 DispatchQueue.main.async {
+                    self.showBottonSheet()
+                }
+            case .popToRoot:
+                DispatchQueue.main.async {
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             }
         }
@@ -102,6 +107,15 @@ class GHEListUsersViewController: BaseViewController {
     
     private func removeLoadingView() {
         loadingView.removeFromSuperview()
+    }
+    
+    private func showBottonSheet() {
+        DispatchQueue.main.async {
+            guard let viewModel = self.viewModel?.bottomSheetViewModel,
+                  let controller = BottomSheetViewController.instantiate(viewModel: viewModel) else { return }
+            controller.modalPresentationStyle = .overFullScreen
+            self.navigationController?.present(controller, animated: true)
+        }
     }
 }
 
