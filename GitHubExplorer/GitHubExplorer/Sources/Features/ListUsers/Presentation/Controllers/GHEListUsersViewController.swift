@@ -173,7 +173,7 @@ extension GHEListUsersViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
+        searchBar.text = String()
         viewModel?.clearFilter()
         searchBar.resignFirstResponder()
     }

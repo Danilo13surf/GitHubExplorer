@@ -72,13 +72,17 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     }
     
     func filterUsers(byLogin login: String) {
+        if login == String() {
+            clearFilter()
+            return
+        }
         filteredModel = model?.filter { $0.login?.range(of: login, options: .caseInsensitive) != nil }
-        status.value = .loaded
+        updateStatus(status: .loaded)
     }
 
     func clearFilter() {
         filteredModel = nil
-        status.value = .loaded
+        updateStatus(status: .loaded)
     }
 
     // MARK: - Private Methods
