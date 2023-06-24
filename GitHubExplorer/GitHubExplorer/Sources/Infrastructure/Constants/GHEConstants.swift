@@ -13,5 +13,6 @@ enum GHEConstants {
     // MARK: - PathApi
     class GHEPathApi {
         let users = "users"
+        let repos = "users/%@/repos"
     }
 }
