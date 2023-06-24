@@ -9,4 +9,33 @@
 import UIKit
 
 class GHERepositoryCell: UITableViewCell {
+    
+    // MARK: - UI
+    private lazy var repoLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.textColor = .black
+        return label
+    }()
+    
+    // MARK: - Setup
+    open func setup(title: String?) {
+        repoLabel.text = title
+        setupUI()
+    }
+    
+    private func setupUI() {
+        selectionStyle = .none
+        setupRepoLabel()
+    }
+    
+    private func setupRepoLabel() {
+        contentView.addSubview(repoLabel)
+        repoLabel.myAnchor(
+            top: (contentView.topAnchor, 36),
+            leading: (contentView.leadingAnchor, 24),
+            trailing: (contentView.trailingAnchor, 24),
+            bottom: (contentView.bottomAnchor, 12)
+        )
+    }
 }
