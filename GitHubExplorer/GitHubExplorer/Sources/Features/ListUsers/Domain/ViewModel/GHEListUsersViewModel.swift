@@ -11,14 +11,14 @@ import Foundation
 
 typealias GHENextFlow = (_ model: GHEResponse?) -> Void
 
-enum GHEStatus {
+enum GHEListUsersStatus {
     case loading
     case loaded
     case error
 }
 
 protocol GHEListUsersViewModelProtocol {
-    var status: Dynamic<GHEStatus?> { get }
+    var status: Dynamic<GHEListUsersStatus?> { get }
     var model: [GHEResponse]? { get }
     var listRepository: GHEResponse? { get }
     
@@ -32,7 +32,7 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     
     // MARK: - Properties
     private var manager: GHEManagerProtocol?
-    var status = Dynamic<GHEStatus?>(.loading)
+    var status = Dynamic<GHEListUsersStatus?>(.loading)
     var model: [GHEResponse]?
     var listRepository: GHEResponse?
     var showNextFlow: GHENextFlow
@@ -63,7 +63,7 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     }
     
     // MARK: - Private Methods
-    private func updateStatus(status: GHEStatus) {
+    private func updateStatus(status: GHEListUsersStatus) {
         self.status.value = status
     }
 }

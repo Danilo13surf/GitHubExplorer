@@ -30,6 +30,8 @@
 		2DAAD3052A4631C90077A45E /* GHEUserProfileCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3042A4631C90077A45E /* GHEUserProfileCordinator.swift */; };
 		2DAAD3072A4632DA0077A45E /* GHEUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3062A4632DA0077A45E /* GHEUserProfileViewModel.swift */; };
 		2DAAD3092A4634650077A45E /* GHEUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3082A4634650077A45E /* GHEUserProfileViewController.swift */; };
+		2DAAD31B2A46EF990077A45E /* GHERepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD31A2A46EF990077A45E /* GHERepositoryCell.swift */; };
+		2DAAD31F2A46F4030077A45E /* GHEListRepositorysOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD31E2A46F4030077A45E /* GHEListRepositorysOperation.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		2DAAD3042A4631C90077A45E /* GHEUserProfileCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileCordinator.swift; sourceTree = "<group>"; };
 		2DAAD3062A4632DA0077A45E /* GHEUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileViewModel.swift; sourceTree = "<group>"; };
 		2DAAD3082A4634650077A45E /* GHEUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileViewController.swift; sourceTree = "<group>"; };
+		2DAAD31A2A46EF990077A45E /* GHERepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHERepositoryCell.swift; sourceTree = "<group>"; };
+		2DAAD31E2A46F4030077A45E /* GHEListRepositorysOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListRepositorysOperation.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				2DAAD2FF2A4614A80077A45E /* GHEProfileCell.swift */,
+				2DAAD31A2A46EF990077A45E /* GHERepositoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 			children = (
 				2DAAD2E92A45D0080077A45E /* Presentation */,
 				2DAAD2E22A45C7820077A45E /* Domain */,
+				2DAAD31C2A46F3B70077A45E /* Data */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -410,6 +416,22 @@
 				2DAAD2AC2A45BA750077A45E /* Operation */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		2DAAD31C2A46F3B70077A45E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD31D2A46F3DF0077A45E /* Operation */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2DAAD31D2A46F3DF0077A45E /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD31E2A46F4030077A45E /* GHEListRepositorysOperation.swift */,
+			);
+			path = Operation;
 			sourceTree = "<group>";
 		};
 		3C0C73473CB9B4B9735F8EB7 /* Frameworks */ = {
@@ -574,9 +596,11 @@
 				2DAAD2DE2A45C45B0077A45E /* GHEManager.swift in Sources */,
 				2DAAD3032A461A5B0077A45E /* BaseViewController.swift in Sources */,
 				2DAAD2AB2A45B98A0077A45E /* UIViewConstraints.swift in Sources */,
+				2DAAD31F2A46F4030077A45E /* GHEListRepositorysOperation.swift in Sources */,
 				2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */,
 				2DAAD3052A4631C90077A45E /* GHEUserProfileCordinator.swift in Sources */,
 				2DAAD2ED2A45D0420077A45E /* GHEListUserCordinator.swift in Sources */,
+				2DAAD31B2A46EF990077A45E /* GHERepositoryCell.swift in Sources */,
 				2DAAD2F72A45DA5B0077A45E /* UIViewAnimations.swift in Sources */,
 				2DAAD2F52A45D8800077A45E /* LoadingView.swift in Sources */,
 				2DAAD3072A4632DA0077A45E /* GHEUserProfileViewModel.swift in Sources */,
