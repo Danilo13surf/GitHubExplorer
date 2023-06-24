@@ -93,10 +93,11 @@ class GHEListUsersViewController: BaseViewController {
     private func setupTableView() {
         contentView.addSubview(tableView)
         tableView.isHidden = true
-        tableView.myAnchor(top: (contentView.topAnchor, 38),
-                           leading: (contentView.leadingAnchor, 24),
-                           trailing: (contentView.trailingAnchor, 24),
-                           bottom: (contentView.bottomAnchor, 24)
+        tableView.myAnchor(
+            top: (contentView.topAnchor, 38),
+            leading: (contentView.leadingAnchor, 24),
+            trailing: (contentView.trailingAnchor, 24),
+            bottom: (contentView.bottomAnchor, 24)
         )
     }
     
