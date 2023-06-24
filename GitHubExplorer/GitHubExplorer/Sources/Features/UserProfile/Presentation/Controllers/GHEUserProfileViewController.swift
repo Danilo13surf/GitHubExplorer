@@ -66,6 +66,15 @@ class GHEUserProfileViewController: BaseViewController {
                            bottom: (contentView.bottomAnchor, 24)
         )
     }
+    
+    func openRepository(_ urlString: String?) {
+        guard let url = URL(string: urlString ?? String()) else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            viewModel?.status.value = .error
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -86,8 +95,8 @@ extension GHEUserProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let profileCell = tableView.dequeueReusableCell(GHEProfileCell.self, for: indexPath)
         let repositoryCell = tableView.dequeueReusableCell(GHERepositoryCell.self, for: indexPath)
-        if indexPath.section == .zero && viewModel?.isDisplayingRepository.value == false {
-            profileCell.setup(title: viewModel?.model?.login, avatarUrl: viewModel?.model?.avatar_url, style: .completeInfo)
+        if indexPath.section == .zero {
+            profileCell.setup(title: viewModel?.model?.login, avatarUrl: viewModel?.model?.avatar_url, style: viewModel?.isDisplayingRepository.value == true ? .showRepo : .completeInfo)
             return profileCell
         }
         repositoryCell.setup(title: viewModel?.listRepository?[indexPath.row].html_url)
@@ -100,6 +109,11 @@ extension GHEUserProfileViewController: UITableViewDataSource {
 extension GHEUserProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async { [self] in
+            if let cell = tableView.cellForRow(at: indexPath) {
+                if cell is GHERepositoryCell {
+                    openRepository(viewModel?.listRepository?[indexPath.row].html_url)
+                }
+            }
             viewModel?.isDisplayingRepository.value = true
             tableView.reloadData()
         }
