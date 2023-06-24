@@ -9,12 +9,19 @@
 import CoreSwift
 import Foundation
 
+enum GHEUserProfileStatus {
+    case loading
+    case loaded
+    case error
+}
+
 protocol GHEUserProfileViewModelProtocol {
+    var status: Dynamic<GHEUserProfileStatus?> { get }
     var model: GHEResponse? { get }
-    var listRepository: [GHEResponse]? { get }
+    var listRepository: [GHEListRepositoryResponse]? { get }
     var isDisplayingRepository: Dynamic<Bool> { get }
     
-    init(model: GHEResponse?)
+    init(manager: GHEManagerProtocol?, model: GHEResponse?)
     
     func numberOfSections() -> Int
 }
@@ -22,17 +29,40 @@ protocol GHEUserProfileViewModelProtocol {
 class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     
     // MARK: - Properties
+    private var manager: GHEManagerProtocol?
+    var status = Dynamic<GHEUserProfileStatus?>(.loading)
     var model: GHEResponse?
-    var listRepository: [GHEResponse]?
+    var listRepository: [GHEListRepositoryResponse]?
     var isDisplayingRepository = Dynamic<Bool>(false)
     
     // MARK: - Initialize
-    required init(model: GHEResponse?) {
+    required init(manager: GHEManagerProtocol? = GHEManager(), model: GHEResponse?) {
+        self.manager = manager
         self.model = model
+        getRepositorys()
     }
     
     // MARK: - Open Methods
     func numberOfSections() -> Int {
         return self.isDisplayingRepository.value ? 2 : 1
+    }
+    
+    // MARK: - Private Methods
+    private func getRepositorys() {
+        updateStatus(status: .loading)
+        manager?.getRepositorys { [weak self] result in
+            switch result {
+            case .success(let model):
+                self?.listRepository = model
+                self?.updateStatus(status: .loaded)
+            case .failure:
+                break
+            }
+            self?.updateStatus(status: .loaded)
+        }
+    }
+    
+    private func updateStatus(status: GHEUserProfileStatus) {
+        self.status.value = status
     }
 }
