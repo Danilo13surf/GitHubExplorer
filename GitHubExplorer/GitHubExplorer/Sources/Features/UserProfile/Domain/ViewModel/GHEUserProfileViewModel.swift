@@ -21,7 +21,7 @@ protocol GHEUserProfileViewModelProtocol {
     var listRepository: [GHEListRepositoryResponse]? { get }
     var isDisplayingRepository: Dynamic<Bool> { get }
     
-    init(manager: GHEManagerProtocol?, model: GHEResponse?)
+    init(manager: GHEUserProfileManagerProtocol?, model: GHEResponse?)
     
     func numberOfSections() -> Int
 }
@@ -29,14 +29,14 @@ protocol GHEUserProfileViewModelProtocol {
 class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     
     // MARK: - Properties
-    private var manager: GHEManagerProtocol?
+    private var manager: GHEUserProfileManagerProtocol?
     var status = Dynamic<GHEUserProfileStatus?>(.loading)
     var model: GHEResponse?
     var listRepository: [GHEListRepositoryResponse]?
     var isDisplayingRepository = Dynamic<Bool>(false)
     
     // MARK: - Initialize
-    required init(manager: GHEManagerProtocol? = GHEManager(), model: GHEResponse?) {
+    required init(manager: GHEUserProfileManagerProtocol? = GHEUserProfileManager(), model: GHEResponse?) {
         self.manager = manager
         self.model = model
         getRepositorys()
