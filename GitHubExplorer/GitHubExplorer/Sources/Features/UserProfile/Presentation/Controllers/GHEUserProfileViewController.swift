@@ -52,7 +52,6 @@ class GHEUserProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindElements()
-        
     }
     
     override func setupUI() {
@@ -79,6 +78,11 @@ class GHEUserProfileViewController: BaseViewController {
                 }
             case .error:
                 DispatchQueue.main.async {
+                    self.showBottonSheet()
+                }
+            case .popToRoot:
+                DispatchQueue.main.async {
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             }
         }
@@ -117,6 +121,15 @@ class GHEUserProfileViewController: BaseViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             viewModel?.status.value = .error
+        }
+    }
+    
+    private func showBottonSheet() {
+        DispatchQueue.main.async {
+            guard let viewModel = self.viewModel?.bottomSheetViewModel,
+                  let controller = BottomSheetViewController.instantiate(viewModel: viewModel) else { return }
+            controller.modalPresentationStyle = .overFullScreen
+            self.navigationController?.present(controller, animated: true)
         }
     }
 }

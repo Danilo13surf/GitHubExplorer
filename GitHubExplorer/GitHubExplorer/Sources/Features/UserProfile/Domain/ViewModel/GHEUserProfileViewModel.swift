@@ -13,12 +13,14 @@ enum GHEUserProfileStatus {
     case loading
     case loaded
     case error
+    case popToRoot
 }
 
 protocol GHEUserProfileViewModelProtocol {
     var status: Dynamic<GHEUserProfileStatus?> { get }
     var model: GHEResponse? { get }
     var listRepository: [GHEListRepositoryResponse]? { get }
+    var bottomSheetViewModel: BottomSheetViewModelProtocol? { get }
     var isDisplayingRepository: Dynamic<Bool> { get }
     
     init(manager: GHEUserProfileManagerProtocol?, model: GHEResponse?)
@@ -34,11 +36,13 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     var model: GHEResponse?
     var listRepository: [GHEListRepositoryResponse]?
     var isDisplayingRepository = Dynamic<Bool>(false)
+    var bottomSheetViewModel: BottomSheetViewModelProtocol?
     
     // MARK: - Initialize
     required init(manager: GHEUserProfileManagerProtocol? = GHEUserProfileManager(), model: GHEResponse?) {
         self.manager = manager
         self.model = model
+        setupBottonSheetViewModel()
         getRepositorys()
     }
     
@@ -55,10 +59,11 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
             case .success(let model):
                 self?.listRepository = model
                 self?.updateStatus(status: .loaded)
+                return
             case .failure:
                 self?.updateStatus(status: .error)
+                return
             }
-            self?.updateStatus(status: .loaded)
         }
     }
     
