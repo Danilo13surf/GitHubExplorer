@@ -9,13 +9,13 @@
 import Foundation
 
 // MARK: - GHEConstants
+// swiftlint:disable convenience_type
 enum GHEConstants {
     // MARK: - PathApi
     class GHEPathApi {
         let users = "users"
         let repos = "users/%@/repos"
     }
-    
     class Constants {
         static let primaryButtonText: String = "Tentar novamente"
         static let alertMessage: String = "Error"
@@ -25,5 +25,7 @@ enum GHEConstants {
         static let listTitle: String = "Lista de Usuarios"
         static let backButtonIcon: String = "icon_arrow_chevron_left"
         static let loadingText: String = "Espere só mais um pouco"
+        static let searchTitle: String = "Pesquisar por login"
     }
 }
+// swiftlint:enable convenience_type

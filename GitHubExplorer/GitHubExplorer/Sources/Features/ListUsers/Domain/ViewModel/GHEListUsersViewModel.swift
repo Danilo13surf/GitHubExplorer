@@ -21,12 +21,15 @@ enum GHEListUsersStatus {
 protocol GHEListUsersViewModelProtocol {
     var status: Dynamic<GHEListUsersStatus?> { get }
     var model: [GHEResponse]? { get }
+    var filteredModel: [GHEResponse]? { get }
     var listRepository: GHEResponse? { get }
     var bottomSheetViewModel: BottomSheetViewModelProtocol? { get }
     
     init(manager: GHEListUserManagerProtocol?, showNextFlow: @escaping GHENextFlow)
     
     func showMoreInfo(model: GHEResponse?)
+    func filterUsers(byLogin login: String)
+    func clearFilter()
     func fetchUssers()
 }
 
@@ -34,6 +37,7 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     
     // MARK: - Properties
     private var manager: GHEListUserManagerProtocol?
+    var filteredModel: [GHEResponse]?
     var status = Dynamic<GHEListUsersStatus?>(.loading)
     var model: [GHEResponse]?
     var listRepository: GHEResponse?
@@ -67,6 +71,16 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
         self.showNextFlow(model)
     }
     
+    func filterUsers(byLogin login: String) {
+        filteredModel = model?.filter { $0.login?.range(of: login, options: .caseInsensitive) != nil }
+        status.value = .loaded
+    }
+
+    func clearFilter() {
+        filteredModel = nil
+        status.value = .loaded
+    }
+
     // MARK: - Private Methods
     private func updateStatus(status: GHEListUsersStatus) {
         self.status.value = status

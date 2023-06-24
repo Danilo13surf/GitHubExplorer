@@ -18,10 +18,11 @@ class GHEListUsersViewController: BaseViewController {
         return view
     }()
     
-    private lazy var headerView: HeaderView = {
-        let header = HeaderView()
-        header.title = GHEConstants.Constants.listTitle
-        return header
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = GHEConstants.Constants.searchTitle
+        searchBar.delegate = self
+        return searchBar
     }()
     
     private lazy var tableView: UITableView = {
@@ -68,7 +69,7 @@ class GHEListUsersViewController: BaseViewController {
             case .loaded:
                 DispatchQueue.main.async {
                     self.removeLoadingView()
-                    self.headerView.fadeInOut(isHidden: false)
+                    self.searchBar.fadeInOut(isHidden: false)
                     self.tableView.fadeInOut(isHidden: false)
                     self.tableView.reloadData()
                 }
@@ -86,14 +87,25 @@ class GHEListUsersViewController: BaseViewController {
     
     override func setupUI() {
         titleText = GHEConstants.Constants.listTitle
+        setupSearchBar()
         setupTableView()
+    }
+    
+    private func setupSearchBar() {
+        contentView.addSubview(searchBar)
+        searchBar.isHidden = true
+        searchBar.myAnchor(
+            top: (contentView.topAnchor, .zero),
+            leading: (contentView.leadingAnchor, .zero),
+            trailing: (contentView.trailingAnchor, .zero)
+        )
     }
     
     private func setupTableView() {
         contentView.addSubview(tableView)
         tableView.isHidden = true
         tableView.myAnchor(
-            top: (contentView.topAnchor, 38),
+            top: (searchBar.bottomAnchor, 38),
             leading: (contentView.leadingAnchor, 24),
             trailing: (contentView.trailingAnchor, 24),
             bottom: (contentView.bottomAnchor, 24)
@@ -122,11 +134,19 @@ class GHEListUsersViewController: BaseViewController {
 // MARK: - UITableViewDataSource
 extension GHEListUsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let filteredCount = viewModel?.filteredModel?.count {
+            return filteredCount
+        }
         return viewModel?.model?.count ?? .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = viewModel?.model?[indexPath.row]
+        let model: GHEResponse?
+        if let filteredModel = viewModel?.filteredModel {
+            model = filteredModel[indexPath.row]
+        } else {
+            model = viewModel?.model?[indexPath.row]
+        }
         let cell = tableView.dequeueReusableCell(GHEProfileCell.self, for: indexPath)
         cell.setup(title: model?.login, avatarUrl: model?.avatar_url)
         return cell
@@ -137,7 +157,24 @@ extension GHEListUsersViewController: UITableViewDataSource {
 extension GHEListUsersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async { [self] in
-            viewModel?.showMoreInfo(model: viewModel?.model?[indexPath.row])
+            if let filteredModel = viewModel?.filteredModel {
+                viewModel?.showMoreInfo(model: filteredModel[indexPath.row])
+            } else {
+                viewModel?.showMoreInfo(model: viewModel?.model?[indexPath.row])
+            }
         }
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension GHEListUsersViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.filterUsers(byLogin: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        viewModel?.clearFilter()
+        searchBar.resignFirstResponder()
     }
 }
