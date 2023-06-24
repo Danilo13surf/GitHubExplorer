@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - GHEListRepositoryResponse
-struct GHEListRepositoryResponse {
+struct GHEListRepositoryResponse: Codable {
     let id: Int?
     let node_id: String?
     let name: String?
@@ -17,7 +17,6 @@ struct GHEListRepositoryResponse {
     let welcome9Private: Bool?
     let owner: GHEResponse?
     let html_url: String?
-    let welcome9Description: NSNull?
     let fork: Bool?
     let url: String?
     let forks_url: String?
@@ -63,7 +62,6 @@ struct GHEListRepositoryResponse {
     let ssh_url: String?
     let clone_url: String?
     let svn_url: String?
-    let homepage: NSNull?
     let size: String?
     let stargazers_count: String?
     let watchers_count: Int?
@@ -75,15 +73,12 @@ struct GHEListRepositoryResponse {
     let has_pages: Bool?
     let has_discussions: Bool?
     let forks_count: Int?
-    let mirror_url: NSNull?
     let archived: Bool?
     let disabled: Bool?
     let open_issues_count: Int?
-    let license: NSNull?
     let allow_forking: Bool?
     let is_template: Bool?
     let web_commit_signoff_required: Bool?
-    let topics: [Any??]
     let visibility: String?
     let forks: Int?
     let open_issues: Int?
