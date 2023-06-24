@@ -56,7 +56,7 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
                 self?.listRepository = model
                 self?.updateStatus(status: .loaded)
             case .failure:
-                break
+                self?.updateStatus(status: .error)
             }
             self?.updateStatus(status: .loaded)
         }

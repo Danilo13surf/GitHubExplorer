@@ -52,7 +52,7 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
                 self?.model = model
                 self?.updateStatus(status: .loaded)
             case .failure:
-                break
+                self?.updateStatus(status: .error)
             }
             self?.updateStatus(status: .loaded)
         }
