@@ -9,12 +9,6 @@
 import UIKit
 
 open class LoadingView: UIView {
-    
-    // MARK: - Constants
-    private enum Constants {
-        static let loadingText = "Espere só mais um pouco"
-    }
-
     // MARK: - UI
     private let titleLabel = UILabel()
     private let spinnerView = UIView()
@@ -23,7 +17,7 @@ open class LoadingView: UIView {
     private func setupTitleLabel() {
         self.addSubview(titleLabel)
         titleLabel.textAlignment = .center
-        titleLabel.text = Constants.loadingText
+        titleLabel.text = GHEConstants.Constants.loadingText
         titleLabel.textColor = .black
         titleLabel.myAnchor(
             top: (self.topAnchor, 70),

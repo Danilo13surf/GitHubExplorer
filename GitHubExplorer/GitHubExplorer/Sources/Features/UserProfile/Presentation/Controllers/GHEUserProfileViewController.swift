@@ -9,12 +9,6 @@
 import UIKit
 
 class GHEUserProfileViewController: BaseViewController {
-    
-    // MARK: - Constants
-    private enum Constants {
-        static let userTitle = "Usuario:"
-    }
-    
     // MARK: - Properties
     private var viewModel: GHEUserProfileViewModelProtocol?
     
@@ -56,7 +50,7 @@ class GHEUserProfileViewController: BaseViewController {
     
     override func setupUI() {
         super.setupUI()
-        titleText = "\(Constants.userTitle) \(getUserName())"
+        titleText = "\(GHEConstants.Constants.userTitle) \(getUserName())"
         setupTableView()
     }
     

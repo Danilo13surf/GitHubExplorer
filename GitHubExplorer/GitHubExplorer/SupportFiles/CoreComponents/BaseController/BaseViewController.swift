@@ -9,13 +9,7 @@
 import UIKit
 
 open class BaseViewController: UIViewController {
-    // MARK: - Constants
-    private enum Constants {
-        static let backButtonIcon = "icon_arrow_chevron_left"
-    }
-    
     // MARK: - Properties
-    
     open var hiddenBackButton = false
     
     /// Specifies whether it is the first view controller in view code in the transition leaving the story board.
@@ -39,7 +33,7 @@ open class BaseViewController: UIViewController {
     private let containerView = UIStackView()
     ///The `contentView` view will be the content showed in the screen dinamically
     public let contentView = UIStackView()
-
+    
     // MARK: - Lifecycle
     open override func loadView() {
         let newView = UIView(frame: UIScreen.main.bounds)
@@ -93,7 +87,7 @@ open class BaseViewController: UIViewController {
         self.navigationItem.hidesBackButton = hiddenBackButton
         if !hiddenBackButton {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(
-                image: UIImage(named: Constants.backButtonIcon),
+                image: UIImage(named: GHEConstants.Constants.backButtonIcon),
                 landscapeImagePhone: nil,
                 style: UIBarButtonItem.Style.plain,
                 target: self, action: #selector(self.btnBackAction)

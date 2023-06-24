@@ -9,12 +9,6 @@
 import UIKit
 
 class GHEListUsersViewController: BaseViewController {
-    
-    // MARK: - Constants
-    private enum Constants {
-        static let listTitle = "Lista de Usuarios"
-    }
-    
     // MARK: - Properties
     private var viewModel: GHEListUsersViewModelProtocol?
     
@@ -26,7 +20,7 @@ class GHEListUsersViewController: BaseViewController {
     
     private lazy var headerView: HeaderView = {
         let header = HeaderView()
-        header.title = Constants.listTitle
+        header.title = GHEConstants.Constants.listTitle
         return header
     }()
     
@@ -86,7 +80,7 @@ class GHEListUsersViewController: BaseViewController {
     }
     
     override func setupUI() {
-        titleText = Constants.listTitle
+        titleText = GHEConstants.Constants.listTitle
         setupTableView()
     }
     

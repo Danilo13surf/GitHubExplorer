@@ -9,13 +9,8 @@
 import UIKit
 
 class GHEWelcomeViewController: BaseViewController {
-    // MARK: - Constants
-    private enum Constants {
-        static let welcomeText = "Bem vindo a busca de usuarios do github, toque na tela para continuar"
-    }
-    
     // MARK: - UI
-    private let headerView = HeaderView(title: Constants.welcomeText)
+    private let headerView = HeaderView(title: GHEConstants.Constants.welcomeText)
     
     // MARK: - Override Methods
     override func viewDidLoad() {
