@@ -8,15 +8,33 @@
 
 import Foundation
 
+// MARK: - GHEDefaultBranch
+enum GHEDefaultBranch: Codable {
+    case development
+    case main
+    case master
+    case the41
+}
+
+// MARK: - GHELicense
+struct GHELicense: Codable {
+    let key: String?
+    let name: String?
+    let spdxID: String?
+    let url: String?
+    let nodeID: String?
+}
+
 // MARK: - GHEListRepositoryResponse
 struct GHEListRepositoryResponse: Codable {
     let id: Int?
     let node_id: String?
     let name: String?
     let fullName: String?
-    let welcome9Private: Bool?
+    let `private`: Bool?
     let owner: GHEResponse?
     let html_url: String?
+    let welcome9Description: String?
     let fork: Bool?
     let url: String?
     let forks_url: String?
@@ -62,6 +80,7 @@ struct GHEListRepositoryResponse: Codable {
     let ssh_url: String?
     let clone_url: String?
     let svn_url: String?
+    let homepage: String?
     let size: String?
     let stargazers_count: String?
     let watchers_count: Int?
@@ -73,15 +92,18 @@ struct GHEListRepositoryResponse: Codable {
     let has_pages: Bool?
     let has_discussions: Bool?
     let forks_count: Int?
+    let mirror_url: String?
     let archived: Bool?
     let disabled: Bool?
     let open_issues_count: Int?
+    let license: GHELicense?
     let allow_forking: Bool?
     let is_template: Bool?
     let web_commit_signoff_required: Bool?
+    let topics: [String?]?
     let visibility: String?
     let forks: Int?
     let open_issues: Int?
     let watchers: Int?
-    let default_branch: String?
+    let default_branch: GHEDefaultBranch?
 }
