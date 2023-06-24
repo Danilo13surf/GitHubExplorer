@@ -30,6 +30,14 @@ protocol GHEUserProfileViewModelProtocol {
 
 class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     
+    // MARK: - Constants
+    private enum Constants {
+        static let iconClose: String = "icon_close"
+        static let primaryButtonText: String = "Tentar novamente"
+        static let alertMessage: String = "Error"
+        static let alertDescription: String = "Erro ao buscar os dados!"
+    }
+    
     // MARK: - Properties
     private var manager: GHEUserProfileManagerProtocol?
     var status = Dynamic<GHEUserProfileStatus?>(.loading)
@@ -69,5 +77,21 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     
     private func updateStatus(status: GHEUserProfileStatus) {
         self.status.value = status
+    }
+    
+    private func setupBottonSheetViewModel() {
+        self.bottomSheetViewModel = BottomSheetViewModel(model: setupBottonSheetModel(), primaryButtonFlow: primaryButtonFlow, rigthButtonFlow: rigthButtonFlow)
+    }
+    
+    private func setupBottonSheetModel() -> BottomSheetModel {
+        return BottomSheetModel(title: Constants.alertMessage, description: Constants.alertDescription, primaryButtonName: Constants.primaryButtonText)
+    }
+    
+    private func primaryButtonFlow() {
+        self.getRepositorys()
+    }
+    
+    private func rigthButtonFlow() {
+        updateStatus(status: .popToRoot)
     }
 }
