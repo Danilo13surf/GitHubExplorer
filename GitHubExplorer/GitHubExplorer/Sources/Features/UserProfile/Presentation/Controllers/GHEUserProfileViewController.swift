@@ -19,6 +19,11 @@ class GHEUserProfileViewController: BaseViewController {
     private var viewModel: GHEUserProfileViewModelProtocol?
     
     // MARK: - UI
+    private lazy var loadingView: LoadingView = {
+        let view = LoadingView()
+        return view
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.registerCell(GHEProfileCell.self)
@@ -44,6 +49,12 @@ class GHEUserProfileViewController: BaseViewController {
     }
     
     // MARK: - Override Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindElements()
+        
+    }
+    
     override func setupUI() {
         super.setupUI()
         titleText = "\(Constants.userTitle) \(getUserName())"
@@ -51,6 +62,37 @@ class GHEUserProfileViewController: BaseViewController {
     }
     
     // MARK: - Private Methods
+    private func bindElements() {
+        viewModel?.status.bind { [weak self] status in
+            guard let self = self,
+                  let status = status else { return }
+            switch status {
+            case .loading:
+                DispatchQueue.main.async {
+                    self.showLoadingView()
+                }
+            case .loaded:
+                DispatchQueue.main.async {
+                    self.removeLoadingView()
+                    self.tableView.fadeInOut(isHidden: false)
+                    self.tableView.reloadData()
+                }
+            case .error:
+                DispatchQueue.main.async {
+                }
+            }
+        }
+    }
+    
+    private func showLoadingView() {
+        contentView.addSubview(loadingView)
+        loadingView.myFillSuperview()
+    }
+    
+    private func removeLoadingView() {
+        loadingView.removeFromSuperview()
+    }
+    
     private func getUserName() -> String {
         if let login = viewModel?.model?.login {
             return login
@@ -60,10 +102,12 @@ class GHEUserProfileViewController: BaseViewController {
     
     private func setupTableView() {
         contentView.addSubview(tableView)
-        tableView.myAnchor(top: (contentView.topAnchor, 38),
-                           leading: (contentView.leadingAnchor, 24),
-                           trailing: (contentView.trailingAnchor, 24),
-                           bottom: (contentView.bottomAnchor, 24)
+        tableView.isHidden = true
+        tableView.myAnchor(
+            top: (contentView.topAnchor, 38),
+            leading: (contentView.leadingAnchor, 24),
+            trailing: (contentView.trailingAnchor, 24),
+            bottom: (contentView.bottomAnchor, 24)
         )
     }
     
