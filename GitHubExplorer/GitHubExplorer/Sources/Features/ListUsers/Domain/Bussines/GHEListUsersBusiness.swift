@@ -9,11 +9,11 @@
 import CoreSwift
 import Foundation
 
-protocol GHEBusinessProtocol {
+protocol GHEListUsersBusinessProtocol {
     func handleUssersGet(result: NetworkingResponse, completion: @escaping GHEGetUssersCompletion)
 }
 
-struct GHEBusiness: GHEBusinessProtocol {
+struct GHEListUsersBusiness: GHEListUsersBusinessProtocol {
     func handleUssersGet(result: () throws -> ResponseObject, completion: @escaping GHEGetUssersCompletion) {
         do {
             guard let response = try result().data else {

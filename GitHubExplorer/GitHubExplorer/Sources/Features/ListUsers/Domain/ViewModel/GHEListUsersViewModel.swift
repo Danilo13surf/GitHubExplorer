@@ -1,5 +1,5 @@
 //
-//  GHEViewModel.swift
+//  GHEListUsersViewModel.swift
 //  GitHubExplorer
 //
 //  Created by Danilo Carlos Ribeiro on 23/06/23.
@@ -17,7 +17,7 @@ enum GHEStatus {
     case error
 }
 
-protocol GHEViewModelProtocol {
+protocol GHEListUsersViewModelProtocol {
     var status: Dynamic<GHEStatus?> { get }
     var model: [GHEResponse]? { get }
     var listRepository: GHEResponse? { get }
@@ -28,7 +28,7 @@ protocol GHEViewModelProtocol {
     func fetchUssers()
 }
 
-class GHEViewModel: GHEViewModelProtocol {
+class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     
     // MARK: - Properties
     private var manager: GHEManagerProtocol?

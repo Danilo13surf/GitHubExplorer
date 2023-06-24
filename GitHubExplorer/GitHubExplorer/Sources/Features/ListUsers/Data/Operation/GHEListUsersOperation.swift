@@ -1,5 +1,5 @@
 //
-//  GHEOperation.swift
+//  GHEListUsersOperation.swift
 //  GitHubExplorer
 //
 //  Created by Danilo Carlos Ribeiro on 23/06/23.
@@ -9,14 +9,14 @@
 import CoreSwift
 import Foundation
 
-class GHEOperation: NetworkingOperation {
+class GHEListUsersOperation: NetworkingOperation {
     
     // MARK: - Properties
-    private let business: GHEBusinessProtocol?
+    private let business: GHEListUsersBusinessProtocol?
     private let completion: GHEGetUssersCompletion
     
     // MARK: Initialize
-    init(provider: ApiProviderProtocol? = nil, business: GHEBusinessProtocol?, completion: @escaping GHEGetUssersCompletion) {
+    init(provider: ApiProviderProtocol? = nil, business: GHEListUsersBusinessProtocol?, completion: @escaping GHEGetUssersCompletion) {
         self.business = business
         self.completion = completion
         super.init(provider: provider)

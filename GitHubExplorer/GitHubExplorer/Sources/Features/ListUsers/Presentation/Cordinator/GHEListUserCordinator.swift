@@ -1,5 +1,5 @@
 //
-//  GHECordinator.swift
+//  GHEListUserCordinator.swift
 //  GitHubExplorer
 //
 //  Created by Danilo Carlos Ribeiro on 23/06/23.
@@ -22,8 +22,8 @@ public class GHEListUserCordinator {
     // MARK: - Public Methods
     
     public func start() {
-        let viewModel = GHEViewModel(showNextFlow: showNextFlow)
-        guard let viewController = GHEListUserViewController.instantiate(viewModel: viewModel) else { return }
+        let viewModel = GHEListUsersViewModel(showNextFlow: showNextFlow)
+        guard let viewController = GHEListUsersViewController.instantiate(viewModel: viewModel) else { return }
         viewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(viewController, animated: true)
     }

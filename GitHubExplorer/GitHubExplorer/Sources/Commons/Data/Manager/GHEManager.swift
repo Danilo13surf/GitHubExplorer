@@ -19,11 +19,11 @@ class GHEManager: BaseManager, GHEManagerProtocol {
     
     // MARK: - Properties
     var provider: ApiProviderProtocol?
-    var business: GHEBusinessProtocol?
+    var business: GHEListUsersBusinessProtocol?
     
     // MARK: - Initialize
     
-    required init(provider: ApiProviderProtocol? = nil, business: GHEBusinessProtocol = GHEBusiness()) {
+    required init(provider: ApiProviderProtocol? = nil, business: GHEListUsersBusinessProtocol = GHEListUsersBusiness()) {
         self.provider = provider
         self.business = business
         super.init()
@@ -33,7 +33,7 @@ class GHEManager: BaseManager, GHEManagerProtocol {
     
     func fetchUssers(completion: @escaping GHEGetUssersCompletion) {
         cancelAllOperations()
-        let operation = GHEOperation(provider: provider, business: business, completion: completion)
+        let operation = GHEListUsersOperation(provider: provider, business: business, completion: completion)
         addOperation(operation)
     }
 }

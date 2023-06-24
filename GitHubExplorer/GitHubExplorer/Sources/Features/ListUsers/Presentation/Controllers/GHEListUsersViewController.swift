@@ -1,5 +1,5 @@
 //
-//  GHEViewController.swift
+//  GHEListUsersViewController.swift
 //  GitHubExplorer
 //
 //  Created by Danilo Carlos Ribeiro on 22/06/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GHEListUserViewController: BaseViewController {
+class GHEListUsersViewController: BaseViewController {
     
     // MARK: - Constants
     private enum Constants {
@@ -16,7 +16,7 @@ class GHEListUserViewController: BaseViewController {
     }
     
     // MARK: - Properties
-    private var viewModel: GHEViewModelProtocol?
+    private var viewModel: GHEListUsersViewModelProtocol?
     
     // MARK: - UI
     private lazy var loadingView: LoadingView = {
@@ -47,8 +47,8 @@ class GHEListUserViewController: BaseViewController {
     }()
     
     // MARK: - Instantiate
-    static func instantiate(viewModel: GHEViewModelProtocol) -> GHEListUserViewController? {
-        let viewController = GHEListUserViewController()
+    static func instantiate(viewModel: GHEListUsersViewModelProtocol) -> GHEListUsersViewController? {
+        let viewController = GHEListUsersViewController()
         viewController.viewModel = viewModel
         return viewController
     }
@@ -111,7 +111,7 @@ class GHEListUserViewController: BaseViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension GHEListUserViewController: UITableViewDataSource {
+extension GHEListUsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.model?.count ?? .zero
     }
@@ -125,7 +125,7 @@ extension GHEListUserViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDataSource
-extension GHEListUserViewController: UITableViewDelegate {
+extension GHEListUsersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async { [self] in
             viewModel?.showMoreInfo(model: viewModel?.model?[indexPath.row])
