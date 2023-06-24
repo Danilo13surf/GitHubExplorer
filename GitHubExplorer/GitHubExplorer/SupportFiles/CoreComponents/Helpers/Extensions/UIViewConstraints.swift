@@ -109,4 +109,112 @@ public extension UIView {
         }
         return superviews
     }
+    
+    var safeTopAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide.topAnchor
+        } else {
+            return self.topAnchor
+        }
+    }
+    
+    var safeLeftAnchor: NSLayoutXAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide.leftAnchor
+        } else {
+            return self.leftAnchor
+        }
+    }
+    
+    var safeRightAnchor: NSLayoutXAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide.rightAnchor
+        } else {
+            return self.rightAnchor
+        }
+    }
+    
+    var safeBottomAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide.bottomAnchor
+        } else {
+            return self.bottomAnchor
+        }
+    }
+    
+    var safeCenterXAnchor: NSLayoutXAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide.centerXAnchor
+        } else {
+            return self.centerXAnchor
+        }
+    }
+    
+    var safeCenterYAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide.centerYAnchor
+        } else {
+            return self.centerYAnchor
+        }
+    }
+    
+    func anchor(top: NSLayoutYAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, paddingTop: CGFloat = 0.0, paddingBottom: CGFloat = 0) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let top = top {
+             topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
+        }
+        
+        if let bottom = bottom {
+            
+            self.bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom).isActive = true
+        }
+    }
+    
+    func anchor(left: NSLayoutXAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat = 0.0, paddingRight: CGFloat = 0) {
+
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let left = left {
+            leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+        }
+        
+        if let right = right {
+            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+        }
+    }
+    
+    func anchor(horizontal: NSLayoutXAxisAnchor? = nil, vertical: NSLayoutYAxisAnchor? = nil, paddingHorizontal: CGFloat = 0.0, paddingVertical: CGFloat = 0.0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let horizontal = horizontal {
+            centerXAnchor.constraint(equalTo: horizontal, constant: paddingHorizontal).isActive = true
+        }
+        
+        if let vertical = vertical {
+            centerYAnchor.constraint(equalTo: vertical, constant: paddingVertical).isActive = true
+        }
+    }
+    
+    func anchor(width: CGFloat = 0.0, height: CGFloat = 0.0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        if  height != 0 {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+        if  width != 0 {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+    }
+    
+    func anchor(topGreater topGreaterThanOrEqualTo: NSLayoutYAxisAnchor? = nil, bottomGreater bottomGreaterThanOrEqualTo: NSLayoutYAxisAnchor? = nil, paddingTop: CGFloat = 0.0, paddingBottom: CGFloat = 0.0) {
+        
+        if let top = topGreaterThanOrEqualTo {
+             topAnchor.constraint(greaterThanOrEqualTo: top, constant: paddingTop).isActive = true
+        }
+        
+        if let bottom = bottomGreaterThanOrEqualTo {
+            bottomAnchor.constraint(greaterThanOrEqualTo: bottom, constant: paddingBottom)
+        }
+    }
 }
