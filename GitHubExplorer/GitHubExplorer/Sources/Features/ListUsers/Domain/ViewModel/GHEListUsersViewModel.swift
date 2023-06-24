@@ -22,7 +22,7 @@ protocol GHEListUsersViewModelProtocol {
     var model: [GHEResponse]? { get }
     var listRepository: GHEResponse? { get }
     
-    init(manager: GHEManagerProtocol?, showNextFlow: @escaping GHENextFlow)
+    init(manager: GHEListUserManagerProtocol?, showNextFlow: @escaping GHENextFlow)
     
     func showMoreInfo(model: GHEResponse?)
     func fetchUssers()
@@ -31,14 +31,14 @@ protocol GHEListUsersViewModelProtocol {
 class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     
     // MARK: - Properties
-    private var manager: GHEManagerProtocol?
+    private var manager: GHEListUserManagerProtocol?
     var status = Dynamic<GHEListUsersStatus?>(.loading)
     var model: [GHEResponse]?
     var listRepository: GHEResponse?
     var showNextFlow: GHENextFlow
     
     // MARK: - Initialize
-    required init(manager: GHEManagerProtocol? = GHEManager(), showNextFlow: @escaping GHENextFlow) {
+    required init(manager: GHEListUserManagerProtocol? = GHEListUserManager(), showNextFlow: @escaping GHENextFlow) {
         self.manager = manager
         self.showNextFlow = showNextFlow
     }

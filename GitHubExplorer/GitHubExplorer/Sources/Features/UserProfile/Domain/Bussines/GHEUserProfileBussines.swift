@@ -1,5 +1,5 @@
 //
-//  GHEListRepositorysOperation.swift
+//  GHEUserProfileBussines.swift
 //  GitHubExplorer
 //
 //  Created by Danilo Carlos Ribeiro on 24/06/23.
@@ -8,6 +8,4 @@
 
 import CoreSwift
 import Foundation
-class GHEListRepositorysOperation: NetworkingOperation {
-    
-}
+
