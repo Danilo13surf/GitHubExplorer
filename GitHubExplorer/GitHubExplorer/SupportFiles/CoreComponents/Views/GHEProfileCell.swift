@@ -11,6 +11,7 @@ import UIKit
 public enum GHEProfileCellStyle {
     case resume
     case completeInfo
+    case showRepo
 }
 
 class GHEProfileCell: UITableViewCell {
@@ -23,6 +24,7 @@ class GHEProfileCell: UITableViewCell {
         static let textDownloadError = "Erro ao fazer o download da imagem:"
         static let textNotFoundData = "Dados da imagem não encontrados."
         static let showRepositories = "Mostrar Repositorios"
+        static let goRepositories = "Toque em um Repositorio para Ir..."
         static let texImageCorrupted = "Não foi possível criar a imagem a partir dos dados recebidos."
     }
     
@@ -47,7 +49,8 @@ class GHEProfileCell: UITableViewCell {
     
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
+        label.textAlignment = .center
+        label.numberOfLines = .zero
         label.textColor = .blue
         return label
     }()
@@ -73,7 +76,14 @@ class GHEProfileCell: UITableViewCell {
     }
     
     private func getInfoText(style: GHEProfileCellStyle) -> String {
-        return style == .resume ? Constants.moreInfoText : Constants.showRepositories
+        switch style {
+        case .resume:
+            return  Constants.moreInfoText
+        case .completeInfo:
+            return Constants.showRepositories
+        case .showRepo:
+            return Constants.goRepositories
+        }
     }
     
     private func setupContentAvatarView() {
@@ -118,6 +128,7 @@ class GHEProfileCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         titleLabel.myAnchor(
             top: (contentView.topAnchor, 36),
+            leading: (contentAvatarView.trailingAnchor, 12),
             trailing: (contentView.trailingAnchor, 24)
         )
     }
@@ -126,6 +137,7 @@ class GHEProfileCell: UITableViewCell {
         contentView.addSubview(infoLabel)
         infoLabel.myAnchor(
             top: (titleLabel.bottomAnchor, 4),
+            leading: (contentAvatarView.trailingAnchor, 12),
             trailing: (contentView.trailingAnchor, 24),
             bottom: (contentView.bottomAnchor, 24)
         )

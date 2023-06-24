@@ -14,6 +14,7 @@ class GHERepositoryCell: UITableViewCell {
     private lazy var repoLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.numberOfLines = .zero
         label.textColor = .black
         return label
     }()
