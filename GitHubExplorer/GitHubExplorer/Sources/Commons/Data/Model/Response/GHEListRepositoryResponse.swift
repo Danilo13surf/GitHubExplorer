@@ -8,14 +8,6 @@
 
 import Foundation
 
-// MARK: - GHEDefaultBranch
-enum GHEDefaultBranch: Codable {
-    case development
-    case main
-    case master
-    case the41
-}
-
 // MARK: - GHELicense
 struct GHELicense: Codable {
     let key: String?
@@ -81,13 +73,13 @@ struct GHEListRepositoryResponse: Codable {
     let clone_url: String?
     let svn_url: String?
     let homepage: String?
-    let size: String?
-    let stargazers_count: String?
+    let size: Int?
+    let stargazers_count: Int?
     let watchers_count: Int?
     let language: String?
-    let has_issues: String?
-    let has_projects: String?
-    let has_downloads: String?
+    let has_issues: Bool?
+    let has_projects: Bool?
+    let has_downloads: Bool?
     let has_wiki: Bool?
     let has_pages: Bool?
     let has_discussions: Bool?
@@ -105,5 +97,5 @@ struct GHEListRepositoryResponse: Codable {
     let forks: Int?
     let open_issues: Int?
     let watchers: Int?
-    let default_branch: GHEDefaultBranch?
+    let default_branch: String?
 }
