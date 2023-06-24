@@ -20,7 +20,9 @@ struct GHEUserProfileBussines: GHEUserProfileBussinesProtocol {
                 completion(.failure(BaseError.parse("Error decoding data")))
                 return
             }
-            let model = try JSONDecoder().decode([GHEListRepositoryResponse].self, from: response)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
+            let model = try decoder.decode([GHEListRepositoryResponse].self, from: response)
             completion(.success(model))
         } catch {
             completion(.failure(error))
