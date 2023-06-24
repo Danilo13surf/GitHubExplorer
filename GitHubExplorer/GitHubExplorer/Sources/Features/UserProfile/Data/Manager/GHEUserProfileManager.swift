@@ -12,7 +12,7 @@ import Foundation
 typealias GHEGetRepositorysCompletion = (Result<[GHEListRepositoryResponse], Error>) -> Void
 
 protocol GHEUserProfileManagerProtocol {
-    func getRepositorys(completion: @escaping GHEGetRepositorysCompletion)
+    func getRepositorys(user: String?, completion: @escaping GHEGetRepositorysCompletion)
 }
 
 class GHEUserProfileManager: BaseManager, GHEUserProfileManagerProtocol {
@@ -30,9 +30,9 @@ class GHEUserProfileManager: BaseManager, GHEUserProfileManagerProtocol {
     }
     
     // MARK: - Public Methods
-    func getRepositorys(completion: @escaping GHEGetRepositorysCompletion) {
+    func getRepositorys(user: String?, completion: @escaping GHEGetRepositorysCompletion) {
         cancelAllOperations()
-        let operation = GHEListRepositorysOperation(provider: provider, business: business, completion: completion)
+        let operation = GHEListRepositorysOperation(user: user, provider: provider, business: business, completion: completion)
         addOperation(operation)
     }
 }

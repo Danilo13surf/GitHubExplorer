@@ -14,9 +14,14 @@ class GHEListRepositorysOperation: NetworkingOperation {
     // MARK: - Properties
     private let business: GHEUserProfileBussinesProtocol?
     private let completion: GHEGetRepositorysCompletion
+    private let user: String?
+    private var urlPath: String {
+        return String(format: GHEConstants.GHEPathApi().repos, user ?? String())
+    }
     
     // MARK: Initialize
-    init(provider: ApiProviderProtocol? = nil, business: GHEUserProfileBussinesProtocol?, completion: @escaping GHEGetRepositorysCompletion) {
+    init(user: String?, provider: ApiProviderProtocol? = nil, business: GHEUserProfileBussinesProtocol?, completion: @escaping GHEGetRepositorysCompletion) {
+        self.user = user
         self.business = business
         self.completion = completion
         super.init(provider: provider)
@@ -35,6 +40,7 @@ class GHEListRepositorysOperation: NetworkingOperation {
     // MARK: - Private Methods
     private func buildRequestData() -> NetworkingRequestData {
         return NetworkingRequestData(url: GHEConstants.GHEPathApi().users,
+        return NetworkingRequestData(url: urlPath,
                                      httpMethod: .get,
                                      isAuthenticated: true)
     }

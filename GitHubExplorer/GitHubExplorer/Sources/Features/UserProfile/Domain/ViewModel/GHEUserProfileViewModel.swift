@@ -50,7 +50,7 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     // MARK: - Private Methods
     private func getRepositorys() {
         updateStatus(status: .loading)
-        manager?.getRepositorys { [weak self] result in
+        manager?.getRepositorys(user: model?.login) { [weak self] result in
             switch result {
             case .success(let model):
                 self?.listRepository = model
