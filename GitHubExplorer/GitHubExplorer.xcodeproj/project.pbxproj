@@ -34,6 +34,7 @@
 		2DAAD31F2A46F4030077A45E /* GHEListRepositorysOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD31E2A46F4030077A45E /* GHEListRepositorysOperation.swift */; };
 		2DAAD3212A46F5180077A45E /* GHEUserProfileBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3202A46F5180077A45E /* GHEUserProfileBussines.swift */; };
 		2DAAD3242A46F8670077A45E /* GHEUserProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3232A46F8670077A45E /* GHEUserProfileManager.swift */; };
+		2DAAD3262A470DEB0077A45E /* DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3252A470DEB0077A45E /* DateFormater.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		2DAAD31E2A46F4030077A45E /* GHEListRepositorysOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListRepositorysOperation.swift; sourceTree = "<group>"; };
 		2DAAD3202A46F5180077A45E /* GHEUserProfileBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileBussines.swift; sourceTree = "<group>"; };
 		2DAAD3232A46F8670077A45E /* GHEUserProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileManager.swift; sourceTree = "<group>"; };
+		2DAAD3252A470DEB0077A45E /* DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormater.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 			children = (
 				2DAAD2AA2A45B98A0077A45E /* UIViewConstraints.swift */,
 				2DAAD2F62A45DA5B0077A45E /* UIViewAnimations.swift */,
+				2DAAD3252A470DEB0077A45E /* DateFormater.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				2DAAD31B2A46EF990077A45E /* GHERepositoryCell.swift in Sources */,
 				2DAAD2F72A45DA5B0077A45E /* UIViewAnimations.swift in Sources */,
 				2DAAD2F52A45D8800077A45E /* LoadingView.swift in Sources */,
+				2DAAD3262A470DEB0077A45E /* DateFormater.swift in Sources */,
 				2DAAD3072A4632DA0077A45E /* GHEUserProfileViewModel.swift in Sources */,
 				2DAAD3212A46F5180077A45E /* GHEUserProfileBussines.swift in Sources */,
 				2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */,
