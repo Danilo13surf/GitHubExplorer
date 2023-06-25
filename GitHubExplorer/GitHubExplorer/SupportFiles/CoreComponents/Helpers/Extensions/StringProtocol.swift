@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  StringProtocol.swift
 //  GitHubExplorer
 //
 //  Created by Danilo Carlos Ribeiro on 25/06/23.

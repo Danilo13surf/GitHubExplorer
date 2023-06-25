@@ -83,7 +83,7 @@ open class BaseViewController: UIViewController {
     }
     
     private func setupHeader() {
-        self.navigationItem.title = titleText?.uppercased()
+        self.navigationItem.title = titleText?.firstCapitalized
         self.navigationItem.hidesBackButton = hiddenBackButton
         if !hiddenBackButton {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(
