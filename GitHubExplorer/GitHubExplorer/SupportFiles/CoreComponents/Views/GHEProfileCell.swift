@@ -162,9 +162,7 @@ class GHEProfileCell: UITableViewCell {
         contentLabelView.addSubview(nameLabel)
         nameLabel.myAnchor(
             centerX: (infoLabel.centerXAnchor, .zero),
-            top: (titleLabel.bottomAnchor, 8),
-            leading: (contentLabelView.leadingAnchor, 24),
-            trailing: (contentLabelView.trailingAnchor, 24)
+            top: (titleLabel.bottomAnchor, 8)
         )
     }
     
