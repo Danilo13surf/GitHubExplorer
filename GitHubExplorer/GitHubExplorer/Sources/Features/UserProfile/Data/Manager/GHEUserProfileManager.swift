@@ -10,9 +10,11 @@ import CoreSwift
 import Foundation
 
 typealias GHEGetRepositorysCompletion = (Result<[GHEListRepositoryResponse], Error>) -> Void
+typealias GHEGetMoreInfoUserCompletion = (Result<GHEResponse, Error>) -> Void
 
 protocol GHEUserProfileManagerProtocol {
     func getRepositorys(user: String?, completion: @escaping GHEGetRepositorysCompletion)
+    func getMoreInfoUser(user: String?, completion: @escaping GHEGetMoreInfoUserCompletion)
 }
 
 class GHEUserProfileManager: BaseManager, GHEUserProfileManagerProtocol {
@@ -33,6 +35,12 @@ class GHEUserProfileManager: BaseManager, GHEUserProfileManagerProtocol {
     func getRepositorys(user: String?, completion: @escaping GHEGetRepositorysCompletion) {
         cancelAllOperations()
         let operation = GHEListRepositorysOperation(user: user, provider: provider, business: business, completion: completion)
+        addOperation(operation)
+    }
+    
+    func getMoreInfoUser(user: String?, completion: @escaping GHEGetMoreInfoUserCompletion) {
+        cancelAllOperations()
+        let operation = GHEUserMoreInfoOperation(user: user, provider: provider, business: business, completion: completion)
         addOperation(operation)
     }
 }
