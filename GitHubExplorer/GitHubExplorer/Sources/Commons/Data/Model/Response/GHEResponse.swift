@@ -28,4 +28,6 @@ struct GHEResponse: Codable {
     let received_events_url: String?
     let type: String?
     let site_admin: Bool?
+    let name: String?
+    let blog: String?
 }
