@@ -13,7 +13,7 @@ class GHEUserProfileViewModelTests: XCTestCase {
     
     // MARK: - Properties
     var viewModel: GHEUserProfileViewModelProtocol?
-    var managerMock: GHEUserProfileManagerProtocol?
+    var managerMock: GHEUserProfileMockManagerProtocol?
     var showNextFlowCalled: Bool = false
     var model: GHEResponse?
     var listModel: [GHEListRepositoryResponse] = []
@@ -36,14 +36,26 @@ class GHEUserProfileViewModelTests: XCTestCase {
     
     // MARK: - Tests Methods
     func testGetRepositorysSuccess() {
-        (managerMock as? GHEUserProfileManagerMock)?.result = .success(listModel)
+        managerMock?.repositoryResult = .success(listModel)
+        managerMock?.moreInfoResult = .success(model ?? setMockGHEResponse())
         viewModel?.getRepositorys()
         XCTAssertNotNil(viewModel?.model)
-        XCTAssertEqual(viewModel?.status.value, .loaded)
+        XCTAssertNotNil(viewModel?.listRepository)
+        XCTAssertNotNil(viewModel?.currentUser)
+        XCTAssertTrue(managerMock?.getMoreInfoUserCalled.value == true)
+    }
+    
+    func testGetRepositorysSuccessWithFailureGetMoreInfoUser() {
+        managerMock?.repositoryResult = .success(listModel)
+        viewModel?.getRepositorys()
+        XCTAssertNotNil(viewModel?.model)
+        XCTAssertNotNil(viewModel?.listRepository)
+        XCTAssertNil(viewModel?.currentUser)
+        XCTAssertTrue(managerMock?.getMoreInfoUserCalled.value == true)
     }
     
     func testGetRepositorysFailure() {
-        (managerMock as? GHEUserProfileManagerMock)?.result = .failure(MockListUserError.mockError)
+        managerMock?.repositoryResult = .failure(MockListUserError.mockError)
         viewModel?.getRepositorys()
         XCTAssertEqual(viewModel?.status.value, .error)
     }

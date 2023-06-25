@@ -6,13 +6,32 @@
 //  Copyright © 2023 GitHubExplorer. All rights reserved.
 //
 
+import CoreSwift
 @testable import GitHubExplorer
 
-class GHEUserProfileManagerMock: GHEUserProfileManagerProtocol {
-    var result: Result<[GHEListRepositoryResponse], any Error>?
+protocol GHEUserProfileMockManagerProtocol: GHEUserProfileManagerProtocol {
+    var getMoreInfoUserCalled: Dynamic<Bool> {  get set  }
+    var repositoryResult: Result<[GHEListRepositoryResponse], any Error>? {  get set  }
+    var moreInfoResult: Result<GHEResponse, any Error>? {  get set  }
 
+}
+
+class GHEUserProfileManagerMock: GHEUserProfileMockManagerProtocol {
+    var getMoreInfoUserCalled = Dynamic<Bool>(false)
+    var repositoryResult: Result<[GHEListRepositoryResponse], Error>?
+    var moreInfoResult: Result<GHEResponse, Error>?
+
+    func getMoreInfoUser(user: String?, completion: @escaping GHEGetMoreInfoUserCompletion) {
+        if let result = moreInfoResult {
+            completion(result)
+        } else {
+            completion(.failure(MockUserProfileError.mockError))
+        }
+        getMoreInfoUserCalled.value = true
+    }
+    
     func getRepositorys(user: String?, completion: @escaping GHEGetRepositorysCompletion) {
-        if let result = result {
+        if let result = repositoryResult {
             completion(result)
         } else {
             completion(.failure(MockUserProfileError.mockError))
