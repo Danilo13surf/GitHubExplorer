@@ -147,7 +147,7 @@ extension GHEUserProfileViewController: UITableViewDataSource {
         let profileCell = tableView.dequeueReusableCell(GHEProfileCell.self, for: indexPath)
         let repositoryCell = tableView.dequeueReusableCell(GHERepositoryCell.self, for: indexPath)
         if indexPath.section == .zero {
-            profileCell.setup(title: viewModel?.model?.login, avatarUrl: viewModel?.model?.avatar_url, style: viewModel?.isDisplayingRepository.value == true ? .showRepo : .completeInfo)
+            profileCell.setup(title: viewModel?.model?.login, name: viewModel?.currentUser?.name, avatarUrl: viewModel?.model?.avatar_url, style: viewModel?.isDisplayingRepository.value == true ? .showRepo : .completeInfo)
             return profileCell
         }
         repositoryCell.setup(title: viewModel?.listRepository?[indexPath.row].html_url)
