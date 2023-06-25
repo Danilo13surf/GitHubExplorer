@@ -24,6 +24,7 @@ class GHEProfileCell: UITableViewCell {
     
     // MARK: - UI
     private let contentAvatarView = UIView()
+    private let contentLabelView = UIView()
     
     private lazy var avatarView: UIImageView = {
         let imageView = UIImageView()
@@ -54,7 +55,7 @@ class GHEProfileCell: UITableViewCell {
     // MARK: - Setup
     open func setup(title: String?, avatarUrl: String?, style: GHEProfileCellStyle = .resume
     ) {
-        titleLabel.text = title
+        setTitleLabel(labelText: title)
         imageUrl = avatarUrl
         infoLabel.text = getInfoText(style: style)
         setupUI()
@@ -64,9 +65,10 @@ class GHEProfileCell: UITableViewCell {
         selectionStyle = .none
         getAvatarUrl()
         setupContentAvatarView()
+        setupLabelView()
         setupAvatarView()
-        setupTitleLabel()
         setupMoreInfoLabel()
+        setupTitleLabel()
     }
     
     private func getInfoText(style: GHEProfileCellStyle) -> String {
@@ -78,16 +80,6 @@ class GHEProfileCell: UITableViewCell {
         case .showRepo:
             return GHEConstants.Constants.goRepositories
         }
-    }
-    
-    private func setupContentAvatarView() {
-        contentView.addSubview(contentAvatarView)
-        contentAvatarView.myAnchor(
-            top: (contentView.topAnchor, 24),
-            leading: (contentView.leadingAnchor, 24),
-            bottom: (contentView.bottomAnchor, 24),
-            width: (128),
-            height: (128))
     }
     
     private func getAvatarUrl() {
@@ -113,27 +105,53 @@ class GHEProfileCell: UITableViewCell {
         }
     }
     
+    private func setTitleLabel(labelText: String?) {
+        let boldAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.boldSystemFont(ofSize: titleLabel.font.pointSize)
+        ]
+        let attributedTitle = NSAttributedString(string: labelText ?? String(), attributes: boldAttributes)
+        titleLabel.attributedText = attributedTitle
+    }
+    
+    private func setupContentAvatarView() {
+        contentView.addSubview(contentAvatarView)
+        contentAvatarView.myAnchor(
+            top: (contentView.topAnchor, .zero),
+            leading: (contentView.leadingAnchor, .zero),
+            bottom: (contentView.bottomAnchor, 24),
+            width: (128),
+            height: (128))
+    }
+    
+    private func setupLabelView() {
+        contentView.addSubview(contentLabelView)
+        contentLabelView.myAnchor(
+            top: (contentView.topAnchor, .zero),
+            leading: (contentAvatarView.trailingAnchor, .zero),
+            trailing: (contentView.trailingAnchor, .zero),
+            bottom: (contentView.bottomAnchor, .zero)
+        )
+    }
+    
     private func setupAvatarView() {
         contentAvatarView.addSubview(avatarView)
         avatarView.myFillSuperview()
     }
     
     private func setupTitleLabel() {
-        contentView.addSubview(titleLabel)
+        contentLabelView.addSubview(titleLabel)
         titleLabel.myAnchor(
-            top: (contentView.topAnchor, 36),
-            leading: (contentAvatarView.trailingAnchor, 12),
-            trailing: (contentView.trailingAnchor, 24)
+            centerX: (infoLabel.centerXAnchor, .zero),
+            top: (contentLabelView.topAnchor, 36)
         )
     }
     
     private func setupMoreInfoLabel() {
-        contentView.addSubview(infoLabel)
+        contentLabelView.addSubview(infoLabel)
         infoLabel.myAnchor(
-            top: (titleLabel.bottomAnchor, 4),
-            leading: (contentAvatarView.trailingAnchor, 12),
-            trailing: (contentView.trailingAnchor, 24),
-            bottom: (contentView.bottomAnchor, 24)
+            leading: (contentLabelView.leadingAnchor, 12),
+            trailing: (contentLabelView.trailingAnchor, 24),
+            bottom: (contentLabelView.bottomAnchor, 24)
         )
     }
 }
