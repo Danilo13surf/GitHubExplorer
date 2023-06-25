@@ -15,6 +15,10 @@ public enum GHEProfileCellStyle {
 }
 
 class GHEProfileCell: UITableViewCell {
+    // MARK: - Properties
+    var imageUrl: String?
+    var styleCell: GHEProfileCellStyle = .resume
+    
     // MARK: - UI
     private let contentAvatarView = UIView()
     private let contentLabelView = UIView()
@@ -32,25 +36,34 @@ class GHEProfileCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .black
+        label.numberOfLines = .zero
+        return label
+    }()
+    
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.textColor = .black
+        label.numberOfLines = .zero
         return label
     }()
     
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.numberOfLines = .zero
         label.textColor = .blue
+        label.numberOfLines = .zero
         return label
     }()
     
-    var imageUrl: String?
-    
     // MARK: - Setup
-    open func setup(title: String?, avatarUrl: String?, style: GHEProfileCellStyle = .resume
+    open func setup(title: String?, name: String? = nil, avatarUrl: String?, style: GHEProfileCellStyle = .resume
     ) {
-        setTitleLabel(labelText: title)
+        styleCell = style
         imageUrl = avatarUrl
-        infoLabel.text = getInfoText(style: style)
+        infoLabel.text = getInfoText()
+        setTitleLabel(labelText: title)
+        nameLabel.text = name
         setupUI()
     }
     
@@ -62,10 +75,11 @@ class GHEProfileCell: UITableViewCell {
         setupAvatarView()
         setupMoreInfoLabel()
         setupTitleLabel()
+        setupMoreInfoUser()
     }
     
-    private func getInfoText(style: GHEProfileCellStyle) -> String {
-        switch style {
+    private func getInfoText() -> String {
+        switch styleCell {
         case .resume:
             return  GHEConstants.Constants.moreInfoText
         case .completeInfo:
@@ -136,6 +150,21 @@ class GHEProfileCell: UITableViewCell {
         titleLabel.myAnchor(
             centerX: (infoLabel.centerXAnchor, .zero),
             top: (contentLabelView.topAnchor, 36)
+        )
+    }
+    
+    private func setupMoreInfoUser() {
+        guard styleCell == .completeInfo else { return }
+        setupNameLabel()
+    }
+    
+    private func setupNameLabel() {
+        contentLabelView.addSubview(nameLabel)
+        nameLabel.myAnchor(
+            centerX: (infoLabel.centerXAnchor, .zero),
+            top: (titleLabel.bottomAnchor, 8),
+            leading: (contentLabelView.leadingAnchor, 24),
+            trailing: (contentLabelView.trailingAnchor, 24)
         )
     }
     
