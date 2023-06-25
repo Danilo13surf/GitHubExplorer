@@ -20,12 +20,6 @@ class GHEProfileCell: UITableViewCell {
     private enum Constants {
         static let imageViewSize: CGFloat = 70
         static let avatarViewBoderWidth: CGFloat = 2
-        static let moreInfoText = "Mais informações"
-        static let textDownloadError = "Erro ao fazer o download da imagem:"
-        static let textNotFoundData = "Dados da imagem não encontrados."
-        static let showRepositories = "Mostrar Repositorios"
-        static let goRepositories = "Toque em um Repositorio para Ir..."
-        static let texImageCorrupted = "Não foi possível criar a imagem a partir dos dados recebidos."
     }
     
     // MARK: - UI
@@ -78,11 +72,11 @@ class GHEProfileCell: UITableViewCell {
     private func getInfoText(style: GHEProfileCellStyle) -> String {
         switch style {
         case .resume:
-            return  Constants.moreInfoText
+            return  GHEConstants.Constants.moreInfoText
         case .completeInfo:
-            return Constants.showRepositories
+            return GHEConstants.Constants.showRepositories
         case .showRepo:
-            return Constants.goRepositories
+            return GHEConstants.Constants.goRepositories
         }
     }
     
@@ -100,11 +94,11 @@ class GHEProfileCell: UITableViewCell {
         if let imageUrlString = imageUrl, let url = URL(string: imageUrlString) {
             let task = URLSession.shared.dataTask(with: url) { data, _, error in
                 if let error = error {
-                    print("\(Constants.textDownloadError) \(error.localizedDescription)")
+                    print("\(GHEConstants.Constants.textDownloadError) \(error.localizedDescription)")
                     return
                 }
                 guard let imageData = data else {
-                    print(Constants.textNotFoundData)
+                    print(GHEConstants.Constants.textNotFoundData)
                     return
                 }
                 if let image = UIImage(data: imageData) {
@@ -112,7 +106,7 @@ class GHEProfileCell: UITableViewCell {
                         self.avatarView.image = image
                     }
                 } else {
-                    print(Constants.texImageCorrupted)
+                    print(GHEConstants.Constants.texImageCorrupted)
                 }
             }
             task.resume()

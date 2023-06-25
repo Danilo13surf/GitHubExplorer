@@ -21,11 +21,17 @@ enum GHEConstants {
         static let alertMessage: String = "Error"
         static let alertDescription: String = "Erro ao buscar os dados!"
         static let welcomeText: String = "Bem vindo a busca de usuarios do github, toque na tela para continuar"
-        static let userTitle: String = "Usuario:"
+        static let userTitle: String = "Lista de repositorios de "
         static let listTitle: String = "Lista de Usuarios"
         static let backButtonIcon: String = "icon_arrow_chevron_left"
         static let loadingText: String = "Espere só mais um pouco"
         static let searchTitle: String = "Pesquisar por login"
+        static let moreInfoText = "Mais informações"
+        static let textDownloadError = "Erro ao fazer o download da imagem:"
+        static let textNotFoundData = "Dados da imagem não encontrados."
+        static let showRepositories = "Mostrar Repositorios"
+        static let goRepositories = "Toque em um Repositorio abrir no site"
+        static let texImageCorrupted = "Não foi possível criar a imagem a partir dos dados recebidos."
     }
 }
 // swiftlint:enable convenience_type
