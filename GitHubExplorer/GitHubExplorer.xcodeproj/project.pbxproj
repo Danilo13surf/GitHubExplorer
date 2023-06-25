@@ -42,6 +42,9 @@
 		2DAAD33B2A471CAC0077A45E /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD33A2A471CAC0077A45E /* UILabel.swift */; };
 		2DAAD34D2A4733390077A45E /* GitHubExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD34C2A4733390077A45E /* GitHubExplorerTests.swift */; };
 		2DAAD3532A47335B0077A45E /* GHEListUsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3442A4731FF0077A45E /* GHEListUsersViewModelTests.swift */; };
+		2DAAD35B2A4738620077A45E /* GHEUserProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD35A2A4738620077A45E /* GHEUserProfileViewModelTests.swift */; };
+		2DAAD35F2A48863A0077A45E /* GHEUserProfileManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD35E2A48863A0077A45E /* GHEUserProfileManagerMock.swift */; };
+		2DAAD3632A48875F0077A45E /* GHEListUserManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3622A48875F0077A45E /* GHEListUserManagerMock.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +98,9 @@
 		2DAAD3442A4731FF0077A45E /* GHEListUsersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListUsersViewModelTests.swift; sourceTree = "<group>"; };
 		2DAAD34A2A4733390077A45E /* GitHubExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAAD34C2A4733390077A45E /* GitHubExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubExplorerTests.swift; sourceTree = "<group>"; };
+		2DAAD35A2A4738620077A45E /* GHEUserProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileViewModelTests.swift; sourceTree = "<group>"; };
+		2DAAD35E2A48863A0077A45E /* GHEUserProfileManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileManagerMock.swift; sourceTree = "<group>"; };
+		2DAAD3622A48875F0077A45E /* GHEListUserManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListUserManagerMock.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -549,6 +555,7 @@
 		2DAAD3402A4731A90077A45E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				2DAAD3572A4738410077A45E /* UserProfile */,
 				2DAAD3412A4731B70077A45E /* ListUsers */,
 			);
 			path = Features;
@@ -558,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				2DAAD3422A4731DD0077A45E /* Domain */,
+				2DAAD3602A4887430077A45E /* Data */,
 			);
 			path = ListUsers;
 			sourceTree = "<group>";
@@ -585,6 +593,63 @@
 				2DAAD34C2A4733390077A45E /* GitHubExplorerTests.swift */,
 			);
 			path = GitHubExplorerTests;
+			sourceTree = "<group>";
+		};
+		2DAAD3572A4738410077A45E /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3582A47384C0077A45E /* Domain */,
+				2DAAD35C2A4886170077A45E /* Data */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		2DAAD3582A47384C0077A45E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3592A4738530077A45E /* ViewModel */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2DAAD3592A4738530077A45E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD35A2A4738620077A45E /* GHEUserProfileViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2DAAD35C2A4886170077A45E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD35D2A4886220077A45E /* Manager */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2DAAD35D2A4886220077A45E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD35E2A48863A0077A45E /* GHEUserProfileManagerMock.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2DAAD3602A4887430077A45E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3612A4887500077A45E /* Manager */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2DAAD3612A4887500077A45E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2DAAD3622A48875F0077A45E /* GHEListUserManagerMock.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		3C0C73473CB9B4B9735F8EB7 /* Frameworks */ = {
@@ -810,8 +875,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAAD3632A48875F0077A45E /* GHEListUserManagerMock.swift in Sources */,
 				2DAAD3532A47335B0077A45E /* GHEListUsersViewModelTests.swift in Sources */,
+				2DAAD35B2A4738620077A45E /* GHEUserProfileViewModelTests.swift in Sources */,
 				2DAAD34D2A4733390077A45E /* GitHubExplorerTests.swift in Sources */,
+				2DAAD35F2A48863A0077A45E /* GHEUserProfileManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

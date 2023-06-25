@@ -25,6 +25,7 @@ protocol GHEUserProfileViewModelProtocol {
     
     init(manager: GHEUserProfileManagerProtocol?, model: GHEResponse?)
     
+    func getRepositorys()
     func numberOfSections() -> Int
 }
 
@@ -47,12 +48,7 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     }
     
     // MARK: - Open Methods
-    func numberOfSections() -> Int {
-        return self.isDisplayingRepository.value ? 2 : 1
-    }
-    
-    // MARK: - Private Methods
-    private func getRepositorys() {
+    func getRepositorys() {
         updateStatus(status: .loading)
         manager?.getRepositorys(user: model?.login) { [weak self] result in
             switch result {
@@ -67,6 +63,11 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
         }
     }
     
+    func numberOfSections() -> Int {
+        return self.isDisplayingRepository.value ? 2 : 1
+    }
+    
+    // MARK: - Private Methods
     private func updateStatus(status: GHEUserProfileStatus) {
         self.status.value = status
     }
