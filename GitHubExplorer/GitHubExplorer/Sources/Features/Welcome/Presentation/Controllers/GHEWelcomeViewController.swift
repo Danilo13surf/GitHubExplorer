@@ -12,19 +12,41 @@ class GHEWelcomeViewController: BaseViewController {
     // MARK: - UI
     private let headerView = HeaderView(title: GHEConstants.Constants.welcomeText)
     
+    private lazy var logoView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: GHEConstants.Constants.logoGithub)
+        imageView.contentMode = .scaleAspectFit
+        imageView.cornerRadius = GHEConstants.Constants.imageViewSize / 2
+        imageView.borderColor = .black
+        imageView.borderWidth = .zero
+        return imageView
+    }()
+        
     // MARK: - Override Methods
     override func viewDidLoad() {
+        hiddenBackButton = true
         super.viewDidLoad()
+        setupLogoView()
         setupWelcomeLabel()
         setupGestureRecognizer()
     }
     
     // MARK: - Private Methods
+    private func setupLogoView() {
+        contentView.addSubview(logoView)
+        logoView.myAnchor(
+            centerX: (contentView.centerXAnchor, .zero),
+            top: (contentView.topAnchor, 48),
+            leading: (contentView.leadingAnchor, 24),
+            trailing: (contentView.trailingAnchor, 24)
+        )
+    }
+    
     private func setupWelcomeLabel() {
         contentView.addSubview(headerView)
         headerView.myAnchor(
             centerX: (contentView.centerXAnchor, .zero),
-            centerY: (contentView.centerYAnchor, .zero),
+            top: (logoView.bottomAnchor, 36),
             leading: (contentView.leadingAnchor, 24),
             trailing: (contentView.trailingAnchor, 24)
         )
