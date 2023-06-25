@@ -20,7 +20,7 @@ struct GHEListUsersBusiness: GHEListUsersBusinessProtocol {
                 completion(.failure(BaseError.parse("Error decoding data")))
                 return
             }
-            let model = try JSONDecoder().decode([GHEResponse].self, from: response)
+            let model = try JSONDecoder().decode([GHEUserResponse].self, from: response)
             completion(.success(model))
         } catch {
             completion(.failure(error))

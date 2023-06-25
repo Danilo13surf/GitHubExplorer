@@ -19,7 +19,7 @@ public class GHEUserProfileCordinator {
     }
     
     // MARK: - Public Methods
-    func start(model: GHEResponse?) {
+    func start(model: GHEUserResponse?) {
         let viewModel = GHEUserProfileViewModel(model: model)
         guard let viewController = GHEUserProfileViewController.instantiate(viewModel: viewModel) else { return }
         viewController.hidesBottomBarWhenPushed = true
@@ -27,5 +27,5 @@ public class GHEUserProfileCordinator {
     }
     
     // MARK: - Private Methods
-    private func showNextFlow(model: GHEResponse?) {}
+    private func showNextFlow(model: GHEUserResponse?) {}
 }

@@ -9,9 +9,9 @@
 @testable import GitHubExplorer
 
 class GHEListUserManagerMock: GHEListUserManagerProtocol {
-    var result: Result<[GHEResponse], Error>?
+    var result: Result<[GHEUserResponse], Error>?
     
-    func fetchUssers(completion: @escaping (Result<[GHEResponse], Error>) -> Void) {
+    func fetchUssers(completion: @escaping (Result<[GHEUserResponse], Error>) -> Void) {
         if let result = result {
             completion(result)
         } else {

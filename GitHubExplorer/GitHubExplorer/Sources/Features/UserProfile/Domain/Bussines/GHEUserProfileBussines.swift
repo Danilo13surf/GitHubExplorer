@@ -38,7 +38,7 @@ struct GHEUserProfileBussines: GHEUserProfileBussinesProtocol {
             }
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
-            let model = try decoder.decode(GHEResponse.self, from: response)
+            let model = try decoder.decode(GHEUserResponse.self, from: response)
             completion(.success(model))
         } catch {
             completion(.failure(error))

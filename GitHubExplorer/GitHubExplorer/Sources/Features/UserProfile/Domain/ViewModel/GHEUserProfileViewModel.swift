@@ -18,13 +18,13 @@ enum GHEUserProfileStatus {
 
 protocol GHEUserProfileViewModelProtocol {
     var status: Dynamic<GHEUserProfileStatus?> { get }
-    var model: GHEResponse? { get }
-    var currentUser: GHEResponse? { get }
+    var model: GHEUserResponse? { get }
+    var currentUser: GHEUserResponse? { get }
     var listRepository: [GHEListRepositoryResponse]? { get }
     var bottomSheetViewModel: BottomSheetViewModelProtocol? { get }
     var isDisplayingRepository: Dynamic<Bool> { get }
     
-    init(manager: GHEUserProfileManagerProtocol?, model: GHEResponse?)
+    init(manager: GHEUserProfileManagerProtocol?, model: GHEUserResponse?)
     
     func getRepositorys()
     func numberOfSections() -> Int
@@ -35,14 +35,14 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     // MARK: - Properties
     private var manager: GHEUserProfileManagerProtocol?
     var status = Dynamic<GHEUserProfileStatus?>(.loading)
-    var model: GHEResponse?
-    var currentUser: GHEResponse?
+    var model: GHEUserResponse?
+    var currentUser: GHEUserResponse?
     var listRepository: [GHEListRepositoryResponse]?
     var isDisplayingRepository = Dynamic<Bool>(false)
     var bottomSheetViewModel: BottomSheetViewModelProtocol?
     
     // MARK: - Initialize
-    required init(manager: GHEUserProfileManagerProtocol? = GHEUserProfileManager(), model: GHEResponse?) {
+    required init(manager: GHEUserProfileManagerProtocol? = GHEUserProfileManager(), model: GHEUserResponse?) {
         self.manager = manager
         self.model = model
         setupBottonSheetViewModel()

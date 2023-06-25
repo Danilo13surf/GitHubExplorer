@@ -10,7 +10,7 @@ import CoreSwift
 import Foundation
 
 typealias GHEGetRepositorysCompletion = (Result<[GHEListRepositoryResponse], Error>) -> Void
-typealias GHEGetMoreInfoUserCompletion = (Result<GHEResponse, Error>) -> Void
+typealias GHEGetMoreInfoUserCompletion = (Result<GHEUserResponse, Error>) -> Void
 
 protocol GHEUserProfileManagerProtocol {
     func getRepositorys(user: String?, completion: @escaping GHEGetRepositorysCompletion)

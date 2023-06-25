@@ -9,7 +9,7 @@
 import CoreSwift
 import Foundation
 
-typealias GHEGetUssersCompletion = (Result<[GHEResponse], Error>) -> Void
+typealias GHEGetUssersCompletion = (Result<[GHEUserResponse], Error>) -> Void
 
 protocol GHEListUserManagerProtocol {
     func fetchUssers(completion: @escaping GHEGetUssersCompletion)

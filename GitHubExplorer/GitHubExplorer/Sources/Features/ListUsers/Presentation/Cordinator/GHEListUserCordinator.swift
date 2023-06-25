@@ -29,7 +29,7 @@ public class GHEListUserCordinator {
     }
     
     // MARK: - Private Methods
-    private func showNextFlow(model: GHEResponse?) {
+    private func showNextFlow(model: GHEUserResponse?) {
         let coordinator = GHEUserProfileCordinator(navigationController: navigationController)
            coordinator.start(model: model)
     }

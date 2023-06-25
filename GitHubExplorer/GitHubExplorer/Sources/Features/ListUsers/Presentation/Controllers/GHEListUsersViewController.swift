@@ -141,7 +141,7 @@ extension GHEListUsersViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model: GHEResponse?
+        let model: GHEUserResponse?
         if let filteredModel = viewModel?.filteredModel {
             model = filteredModel[indexPath.row]
         } else {

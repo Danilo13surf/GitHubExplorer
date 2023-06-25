@@ -9,7 +9,7 @@
 import CoreSwift
 import Foundation
 
-typealias GHENextFlow = (_ model: GHEResponse?) -> Void
+typealias GHENextFlow = (_ model: GHEUserResponse?) -> Void
 
 enum GHEListUsersStatus {
     case loading
@@ -20,14 +20,14 @@ enum GHEListUsersStatus {
 
 protocol GHEListUsersViewModelProtocol {
     var status: Dynamic<GHEListUsersStatus?> { get }
-    var model: [GHEResponse]? { get }
-    var filteredModel: [GHEResponse]? { get }
-    var listRepository: GHEResponse? { get }
+    var model: [GHEUserResponse]? { get }
+    var filteredModel: [GHEUserResponse]? { get }
+    var listRepository: GHEUserResponse? { get }
     var bottomSheetViewModel: BottomSheetViewModelProtocol? { get }
     
     init(manager: GHEListUserManagerProtocol?, showNextFlow: @escaping GHENextFlow)
     
-    func showMoreInfo(model: GHEResponse?)
+    func showMoreInfo(model: GHEUserResponse?)
     func filterUsers(byLogin login: String)
     func clearFilter()
     func fetchUssers()
@@ -37,10 +37,10 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
     
     // MARK: - Properties
     private var manager: GHEListUserManagerProtocol?
-    var filteredModel: [GHEResponse]?
+    var filteredModel: [GHEUserResponse]?
     var status = Dynamic<GHEListUsersStatus?>(.loading)
-    var model: [GHEResponse]?
-    var listRepository: GHEResponse?
+    var model: [GHEUserResponse]?
+    var listRepository: GHEUserResponse?
     var showNextFlow: GHENextFlow
     var bottomSheetViewModel: BottomSheetViewModelProtocol?
     
@@ -67,7 +67,7 @@ class GHEListUsersViewModel: GHEListUsersViewModelProtocol {
         }
     }
     
-    func showMoreInfo(model: GHEResponse?) {
+    func showMoreInfo(model: GHEUserResponse?) {
         self.showNextFlow(model)
     }
     

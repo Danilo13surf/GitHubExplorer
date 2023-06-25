@@ -24,7 +24,7 @@ struct GHEListRepositoryResponse: Codable {
     let name: String?
     let fullName: String?
     let `private`: Bool?
-    let owner: GHEResponse?
+    let owner: GHEUserResponse?
     let html_url: String?
     let welcome9Description: String?
     let fork: Bool?

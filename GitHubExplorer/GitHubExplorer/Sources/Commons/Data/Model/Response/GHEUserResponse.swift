@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - GHEResponse
-struct GHEResponse: Codable {
+struct GHEUserResponse: Codable {
     let login: String?
     let id: Int?
     let node_id: String?

@@ -15,7 +15,7 @@ class GHEUserProfileViewModelTests: XCTestCase {
     var viewModel: GHEUserProfileViewModelProtocol?
     var managerMock: GHEUserProfileMockManagerProtocol?
     var showNextFlowCalled: Bool = false
-    var model: GHEResponse?
+    var model: GHEUserResponse?
     var listModel: [GHEListRepositoryResponse] = []
     
     // MARK: - Override Methods
@@ -61,8 +61,8 @@ class GHEUserProfileViewModelTests: XCTestCase {
     }
     
     // MARK: - Private Methods for set mock response
-    private func setMockGHEResponse() -> GHEResponse {
-        return GHEResponse(login: "user1", id: 1, node_id: "node1", avatar_url: "avatar1", gravatar_id: "gravatar1", url: "url1", html_url: "html1", followers_url: "followers1", following_url: "following1", gists_url: "gists1", starred_url: "starred1", subscriptions_url: "subscriptions1", organizations_url: "organizations1", repos_url: "repos1", events_url: "events1", received_events_url: "received_events1", type: "type1", site_admin: false, name: "name", blog: "blog")
+    private func setMockGHEResponse() -> GHEUserResponse {
+        return GHEUserResponse(login: "user1", id: 1, node_id: "node1", avatar_url: "avatar1", gravatar_id: "gravatar1", url: "url1", html_url: "html1", followers_url: "followers1", following_url: "following1", gists_url: "gists1", starred_url: "starred1", subscriptions_url: "subscriptions1", organizations_url: "organizations1", repos_url: "repos1", events_url: "events1", received_events_url: "received_events1", type: "type1", site_admin: false, name: "name", blog: "blog")
     }
     
     private func setMockListRepositoryResponse() -> GHEListRepositoryResponse {

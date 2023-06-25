@@ -12,14 +12,14 @@ import CoreSwift
 protocol GHEUserProfileMockManagerProtocol: GHEUserProfileManagerProtocol {
     var getMoreInfoUserCalled: Dynamic<Bool> {  get set  }
     var repositoryResult: Result<[GHEListRepositoryResponse], any Error>? {  get set  }
-    var moreInfoResult: Result<GHEResponse, any Error>? {  get set  }
+    var moreInfoResult: Result<GHEUserResponse, any Error>? {  get set  }
 
 }
 
 class GHEUserProfileManagerMock: GHEUserProfileMockManagerProtocol {
     var getMoreInfoUserCalled = Dynamic<Bool>(false)
     var repositoryResult: Result<[GHEListRepositoryResponse], Error>?
-    var moreInfoResult: Result<GHEResponse, Error>?
+    var moreInfoResult: Result<GHEUserResponse, Error>?
 
     func getMoreInfoUser(user: String?, completion: @escaping GHEGetMoreInfoUserCompletion) {
         if let result = moreInfoResult {

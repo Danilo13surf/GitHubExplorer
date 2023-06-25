@@ -11,7 +11,7 @@
 		2D3C63D52A450E9B008CEB30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63D42A450E9B008CEB30 /* SceneDelegate.swift */; };
 		2D3C63D72A450E9B008CEB30 /* GHEListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63D62A450E9B008CEB30 /* GHEListUsersViewController.swift */; };
 		2D3C63DC2A450E9D008CEB30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */; };
-		2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */; };
+		2D3C63FD2A4548A9008CEB30 /* GHEUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3C63FC2A4548A9008CEB30 /* GHEUserResponse.swift */; };
 		2D94FD502A48DF1500BF6E3F /* GHEUserMoreInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94FD4F2A48DF1500BF6E3F /* GHEUserMoreInfoOperation.swift */; };
 		2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */; };
 		2DAAD2A52A45B6880077A45E /* GHEConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD2A42A45B6880077A45E /* GHEConstants.swift */; };
@@ -68,7 +68,7 @@
 		2D3C63D62A450E9B008CEB30 /* GHEListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListUsersViewController.swift; sourceTree = "<group>"; };
 		2D3C63DB2A450E9D008CEB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D3C63E02A450E9D008CEB30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEResponse.swift; sourceTree = "<group>"; };
+		2D3C63FC2A4548A9008CEB30 /* GHEUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserResponse.swift; sourceTree = "<group>"; };
 		2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D94FD4F2A48DF1500BF6E3F /* GHEUserMoreInfoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserMoreInfoOperation.swift; sourceTree = "<group>"; };
 		2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListRepositoryResponse.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 		2D3C63FB2A45488E008CEB30 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				2D3C63FC2A4548A9008CEB30 /* GHEResponse.swift */,
+				2D3C63FC2A4548A9008CEB30 /* GHEUserResponse.swift */,
 				2DAAD2A02A45B3B90077A45E /* GHEListRepositoryResponse.swift */,
 			);
 			path = Response;
@@ -874,7 +874,7 @@
 				2DAAD3382A471A800077A45E /* BottomSheetViewModel.swift in Sources */,
 				2DAAD2E62A45C7C60077A45E /* GHEListUsersBusiness.swift in Sources */,
 				2DAAD3372A471A7E0077A45E /* BottomSheetView.swift in Sources */,
-				2D3C63FD2A4548A9008CEB30 /* GHEResponse.swift in Sources */,
+				2D3C63FD2A4548A9008CEB30 /* GHEUserResponse.swift in Sources */,
 				2DAAD2E82A45CA7D0077A45E /* GHEListUsersViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
