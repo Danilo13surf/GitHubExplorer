@@ -19,6 +19,7 @@ enum GHEUserProfileStatus {
 protocol GHEUserProfileViewModelProtocol {
     var status: Dynamic<GHEUserProfileStatus?> { get }
     var model: GHEResponse? { get }
+    var currentUser: GHEResponse? { get }
     var listRepository: [GHEListRepositoryResponse]? { get }
     var bottomSheetViewModel: BottomSheetViewModelProtocol? { get }
     var isDisplayingRepository: Dynamic<Bool> { get }
@@ -35,6 +36,7 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     private var manager: GHEUserProfileManagerProtocol?
     var status = Dynamic<GHEUserProfileStatus?>(.loading)
     var model: GHEResponse?
+    var currentUser: GHEResponse?
     var listRepository: [GHEListRepositoryResponse]?
     var isDisplayingRepository = Dynamic<Bool>(false)
     var bottomSheetViewModel: BottomSheetViewModelProtocol?
@@ -54,7 +56,7 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
             switch result {
             case .success(let model):
                 self?.listRepository = model
-                self?.updateStatus(status: .loaded)
+                self?.getMoreInfoUser()
                 return
             case .failure:
                 self?.updateStatus(status: .error)
@@ -68,6 +70,20 @@ class GHEUserProfileViewModel: GHEUserProfileViewModelProtocol {
     }
     
     // MARK: - Private Methods
+    private func getMoreInfoUser() {
+        manager?.getMoreInfoUser(user: model?.login) { [weak self] result in
+            switch result {
+            case .success(let model):
+                self?.currentUser = model
+                self?.updateStatus(status: .loaded)
+                return
+            case .failure:
+                self?.updateStatus(status: .error)
+                return
+            }
+        }
+    }
+    
     private func updateStatus(status: GHEUserProfileStatus) {
         self.status.value = status
     }
