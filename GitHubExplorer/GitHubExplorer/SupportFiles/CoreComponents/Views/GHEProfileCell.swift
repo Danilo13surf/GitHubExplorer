@@ -15,13 +15,6 @@ public enum GHEProfileCellStyle {
 }
 
 class GHEProfileCell: UITableViewCell {
-    
-    // MARK: - Constants
-    private enum Constants {
-        static let imageViewSize: CGFloat = 70
-        static let avatarViewBoderWidth: CGFloat = 2
-    }
-    
     // MARK: - UI
     private let contentAvatarView = UIView()
     private let contentLabelView = UIView()
@@ -29,9 +22,9 @@ class GHEProfileCell: UITableViewCell {
     private lazy var avatarView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.cornerRadius = Constants.imageViewSize / 2
+        imageView.cornerRadius = GHEConstants.Constants.imageViewSize / 2
         imageView.borderColor = .black
-        imageView.borderWidth = Constants.avatarViewBoderWidth
+        imageView.borderWidth = GHEConstants.Constants.avatarViewBoderWidth
         return imageView
     }()
     

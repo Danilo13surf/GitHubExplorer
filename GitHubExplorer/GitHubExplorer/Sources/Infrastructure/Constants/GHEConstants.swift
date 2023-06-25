@@ -17,6 +17,8 @@ enum GHEConstants {
         let repos = "users/%@/repos"
     }
     class Constants {
+        static let imageViewSize: CGFloat = 70
+        static let avatarViewBoderWidth: CGFloat = 2
         static let primaryButtonText: String = "Tentar novamente"
         static let alertMessage: String = "Error"
         static let alertDescription: String = "Erro ao buscar os dados!"
@@ -24,6 +26,7 @@ enum GHEConstants {
         static let userTitle: String = "Lista de repositorios de "
         static let listTitle: String = "Lista de Usuarios"
         static let backButtonIcon: String = "icon_arrow_chevron_left"
+        static let logoGithub: String = "logo_github"
         static let loadingText: String = "Espere só mais um pouco"
         static let searchTitle: String = "Pesquisar por login"
         static let moreInfoText = "Mais informações"
