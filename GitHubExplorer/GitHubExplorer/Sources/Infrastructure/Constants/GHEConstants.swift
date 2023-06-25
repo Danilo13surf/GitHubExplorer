@@ -15,6 +15,7 @@ enum GHEConstants {
     class GHEPathApi {
         let users = "users"
         let repos = "users/%@/repos"
+        let user = "users/%@"
     }
     class Constants {
         static let imageViewSize: CGFloat = 70
