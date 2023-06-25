@@ -45,6 +45,7 @@
 		2DAAD35B2A4738620077A45E /* GHEUserProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD35A2A4738620077A45E /* GHEUserProfileViewModelTests.swift */; };
 		2DAAD35F2A48863A0077A45E /* GHEUserProfileManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD35E2A48863A0077A45E /* GHEUserProfileManagerMock.swift */; };
 		2DAAD3632A48875F0077A45E /* GHEListUserManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3622A48875F0077A45E /* GHEListUserManagerMock.swift */; };
+		2DAAD3652A488FF00077A45E /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAD3642A488FF00077A45E /* StringProtocol.swift */; };
 		B0EFC0EA25D397CD457E05F6 /* Pods_GitHubExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8B628C303E566C2EA76BE1 /* Pods_GitHubExplorer.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		2DAAD35A2A4738620077A45E /* GHEUserProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileViewModelTests.swift; sourceTree = "<group>"; };
 		2DAAD35E2A48863A0077A45E /* GHEUserProfileManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEUserProfileManagerMock.swift; sourceTree = "<group>"; };
 		2DAAD3622A48875F0077A45E /* GHEListUserManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEListUserManagerMock.swift; sourceTree = "<group>"; };
+		2DAAD3642A488FF00077A45E /* StringProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocol.swift; sourceTree = "<group>"; };
 		7D5A1AE59F42EE492AA1A40F /* Pods-GitHubExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubExplorer.release.xcconfig"; path = "Target Support Files/Pods-GitHubExplorer/Pods-GitHubExplorer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,6 +246,7 @@
 				2DAAD2F62A45DA5B0077A45E /* UIViewAnimations.swift */,
 				2DAAD3252A470DEB0077A45E /* DateFormater.swift */,
 				2DAAD33A2A471CAC0077A45E /* UILabel.swift */,
+				2DAAD3642A488FF00077A45E /* StringProtocol.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				2DAAD2A12A45B3B90077A45E /* GHEListRepositoryResponse.swift in Sources */,
 				2D3C63D32A450E9B008CEB30 /* AppDelegate.swift in Sources */,
 				2DAAD2F22A45D2ED0077A45E /* HeaderView.swift in Sources */,
+				2DAAD3652A488FF00077A45E /* StringProtocol.swift in Sources */,
 				2DAAD33B2A471CAC0077A45E /* UILabel.swift in Sources */,
 				2DAAD2DE2A45C45B0077A45E /* GHEListUserManager.swift in Sources */,
 				2DAAD3392A471A830077A45E /* BottomSheetModel.swift in Sources */,
