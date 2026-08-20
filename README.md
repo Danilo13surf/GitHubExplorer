@@ -1,2 +1,3 @@
 # GitHubExplorer
-O GitHubExplorer é um aplicativo que fornece informações sobre usuários e seus repositórios no GitHub. Com este aplicativo, você pode listar usuários, pesquisar usuários pelo nome de usuário (login) e visualizar informações detalhadas de um usuário específico, incluindo seu nome e a lista de repositórios. Além disso, você pode clicar em um repositório para navegar diretamente para a página correspondente no GitHub.
+O GitHubExplorer é um aplicativo que fornece informações sobre usuários e seus repositórios no GitHub. Com este aplicativo, você pode listar usuários, pesquisar usuários pelo nome de usuário (login) e visualizar informações detalhadas de um usuário específico, incluindo seu nome e a lista de repositórios. 
+Além disso, você pode clicar em um repositório para navegar diretamente para a página correspondente no GitHub.
